@@ -33,7 +33,7 @@
         </thead>
         <!--Display data-->
         <{if $users_count == true}>
-        <form name='memberslist' id='memberslist' action='<{$php_selft}>' method='POST'>
+        <form class="form-inline" name='memberslist' id='memberslist' action='<{$php_selft}>' method='POST'>
         <tbody>
         <{foreach item=users from=$users}>
         <tr class="<{cycle values='even,odd'}> alignmiddle">
@@ -71,21 +71,21 @@
         <{/foreach}>
         </tbody>
         <tr>
-            <td class='text-left' colspan='6'>
-                <select name='fct' onChange='changeDisplay (this.value, "groups", "edit_group")'>
-                    <option value=''>---------</option>
-                    <option value='mailusers'><{$smarty.const._AM_SYSTEM_USERS_SENDMAIL}></option>
-                    <option value='groups'><{$smarty.const._AM_SYSTEM_USERS_EDIT_GROUPS}></option>
-                    <option value='users'><{$smarty.const._AM_SYSTEM_USERS_DELETE}></option>
-                </select>&nbsp;
-                <select name='edit_group' id='edit_group' onChange='changeDisplay (this.value, this.value, "selgroups")' style="display:none;">
-                    <option value=''>---------</option>
-                    <option value='add_group'><{$smarty.const._AM_SYSTEM_USERS_ADD_GROUPS}></option>
-                    <option value='delete_group'><{$smarty.const._AM_SYSTEM_USERS_DELETE_GROUPS}></option>
-                </select>
-                <{$form_select_groups}>
-                <input type="hidden" name="op" value="action_group">
-                <input type='submit' name='Submit' class="btn btn-info" />
+            <td class="form-group" colspan='8'>				
+				<select name='fct' onChange='changeDisplay (this.value, "groups", "edit_group")'>
+					<option value=''>---------</option>
+					<option value='mailusers'><{$smarty.const._AM_SYSTEM_USERS_SENDMAIL}></option>
+					<option value='groups'><{$smarty.const._AM_SYSTEM_USERS_EDIT_GROUPS}></option>
+					<option value='users'><{$smarty.const._AM_SYSTEM_USERS_DELETE}></option>
+				</select>&nbsp;
+				<select name='edit_group' id='edit_group' onChange='changeDisplay (this.value, this.value, "selgroups")' style="display:none;">
+					<option value=''>---------</option>
+					<option value='add_group'><{$smarty.const._AM_SYSTEM_USERS_ADD_GROUPS}></option>
+					<option value='delete_group'><{$smarty.const._AM_SYSTEM_USERS_DELETE_GROUPS}></option>
+				</select>
+				<{$form_select_groups}>
+				<input type="hidden" name="op" value="action_group">
+				<input type='submit' name='Submit' class="btn btn-default" />
             </td>
         </tr>
         </form>
