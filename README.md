@@ -8,3 +8,11 @@ Beta testing
 Use a new fresh version of xoops 2.5.7 or 2.5.8
 
 You could overwrite the files there to change
+
+# Bootstrap
+
+This theme uses bootstrap 3.3.1 or 3.3.2, pre fnzionare properly is necessary to use jquery 1.10.4
+
+is already included in the package of the theme, but acausa additions from some of the core files, it may not fnzionare properly.
+
+Please report any abnormal operation
