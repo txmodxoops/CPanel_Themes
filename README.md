@@ -11,7 +11,7 @@ You could overwrite the files there to change
 
 # Bootstrap
 
-This theme uses bootstrap 3.3.1 or 3.3.2, pre fnzionare properly is necessary to use jquery 1.10.4
+This theme uses bootstrap 3.3.1 or 3.3.2, to work properly you must use jquery 1.10.4
 
 is already included in the package of the theme, but acausa additions from some of the core files, it may not fnzionare properly.
 
