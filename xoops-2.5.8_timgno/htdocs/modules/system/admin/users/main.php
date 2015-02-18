@@ -47,6 +47,8 @@ $myts =& MyTextSanitizer::getInstance();
 $xoTheme->addStylesheet( XOOPS_URL . '/modules/system/css/admin.css');
 $xoTheme->addStylesheet( XOOPS_URL . '/modules/system/css/ui/' . xoops_getModuleOption('jquery_theme', 'system') . '/ui.all.css');
 // Define scripts
+$xoTheme->addScript('browse.php?Frameworks/jquery/jquery.min.js');
+$xoTheme->addScript('browse.php?Frameworks/jquery/plugins/jquery-ui.min.js');
 $xoTheme->addScript('modules/system/js/admin.js');
 // Define Breadcrumb and tips
 $xoBreadCrumb->addLink( _AM_SYSTEM_USERS_NAV_MAIN, system_adminVersion('users', 'adminpath') );
@@ -321,11 +323,11 @@ switch ($op) {
     default:
         // Search and Display
         // Define scripts
-        $xoTheme->addScript('browse.php?Frameworks/jquery/jquery.js');
-        $xoTheme->addScript('browse.php?Frameworks/jquery/plugins/jquery.ui.js');
+        //$xoTheme->addScript('browse.php?Frameworks/jquery/jquery.js');
+        //$xoTheme->addScript('browse.php?Frameworks/jquery/plugins/jquery.ui.js');
         //table sorting does not work with select boxes
         //$xoTheme->addScript('browse.php?Frameworks/jquery/plugins/jquery.tablesorter.js');
-        $xoTheme->addScript('modules/system/js/admin.js');
+        //$xoTheme->addScript('modules/system/js/admin.js');
         //Recherche approfondie
 
         if (isset($_REQUEST['complet_search'])) {

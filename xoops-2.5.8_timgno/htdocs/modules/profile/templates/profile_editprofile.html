@@ -1,0 +1,6 @@
+<{includeq file="db:profile_breadcrumbs.html"}>
+<{if $stop}>
+    <div class="alert alert-danger"><{$stop}></div>
+    <br class='clear'/>
+<{/if}>
+<{includeq file="db:profile_form.html" xoForm=$userinfo}>

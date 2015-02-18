@@ -1,7 +1,7 @@
 /*!
- * XNewage Bootstrap Admin Xoops Theme (http://www.txmodxoops.org)
+ * XNewage Bootstrap CPanel Xoops Theme (http://www.txmodxoops.org)
  * Licensed under the GNU License v2.0.
- * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ * For details, see http://www.gnu.org/licenses/gpl-3.0.html
  */
 
 body {
@@ -89,6 +89,41 @@ ul.line-type {
 .navbar-top-links .dropdown-user {
     right: 0;
     left: auto;
+	margin-top: 20px;
+}
+
+.navbar-top-links a.account {
+  margin-bottom: -20px;
+  padding: 5px 0 5px 10px;
+  height: 50px;
+  line-height: 18px;
+}
+
+.navbar-top-links .avatar {
+  width: 40px;
+  float: left;
+  margin-right: 5px;
+}
+
+.navbar-top-links .avatar > img {
+  width:40px;
+  height:40px;
+  border: 1px solid #F8F8F8;
+}
+
+.navbar-top-links .avatar > img i.fa.fa-caret-down.pull-right {
+  margin-top: 50px;
+}
+
+.navbar-top-links .user-mini > span {
+  display: block;
+  font-size: 12px;
+  color:#363636;
+  margin-bottom: -4px;
+}
+.navbar-top-links .user-mini > span.welcome {
+  font-weight: bold;
+  margin-top: 2px;
 }
 
 .sidebar .sidebar-nav.navbar-collapse {
@@ -240,27 +275,27 @@ ul.line-type {
     clear: both;
 }
 
-table.dataTable thead .sorting,
-table.dataTable thead .sorting_asc,
-table.dataTable thead .sorting_desc,
-table.dataTable thead .sorting_asc_disabled,
-table.dataTable thead .sorting_desc_disabled {
+table.dataTable thead.sorting,
+table.dataTable thead.sorting_asc,
+table.dataTable thead.sorting_desc,
+table.dataTable thead.sorting_asc_disabled,
+table.dataTable thead.sorting_desc_disabled {
     background: 0 0;
 }
 
-table.dataTable thead .sorting_asc:after {
+table.dataTable thead.sorting_asc:after {
     content: "\f0de";
     float: right;
     font-family: fontawesome;
 }
 
-table.dataTable thead .sorting_desc:after {
+table.dataTable thead.sorting_desc:after {
     content: "\f0dd";
     float: right;
     font-family: fontawesome;
 }
 
-table.dataTable thead .sorting:after {
+table.dataTable thead.sorting:after {
     content: "\f0dc";
     float: right;
     font-family: fontawesome;
@@ -439,10 +474,27 @@ ul.thumbnails {
 	margin: -5px -15px -15px -15px;
 }
 
-ul.thumbnails li.module-icon {	
+ul.thumbnails li.box-icon {	
 	display: inline-block;
 }
 
-ul.thumbnails li.module-icon a.thumbnail {
+ul.thumbnails li.box-icon a.thumbnail {
 	padding: 5px;
+}
+
+ul.list-inline {
+	list-style-type: none;
+	margin: -5px -15px -15px -15px;
+}
+
+ul.list-inline li.box-icon {	
+	display: inline-block;
+}
+
+ul.list-inline li.box-icon a.thumbnail {
+	padding: 5px;
+}
+
+.row.row-preferences {
+	margin: 20px 0 0 10px;
 }

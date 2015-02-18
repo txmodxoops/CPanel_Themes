@@ -59,15 +59,18 @@ class XoopsFormTextDateSelect extends XoopsFormText
             if (!$included) {
                 $included = true;
                 $GLOBALS['xoTheme']->addScript('','', '
-                    $(function() {
-						$( ".datepicker" ).datepicker({ $.datepicker.regional[ "'. _LANGCODE .'" ] });
-						$( ".datepicker" ).datepicker({ 
+                    $(function() {						
+						$( ".datepicker" ).datepicker({
+							showOn: "button",
+							buttonImage: "'.XOOPS_URL.'/images/calendar.png",
+							buttonImageOnly: true,
+							buttonText: "Select date",
 							showWeek: true,
 							firstDay: 1,
 							showButtonPanel: true,
 							showOtherMonths: true,
 							selectOtherMonths: true
-						});
+						}).regional[ "'. _LANGCODE .'" ];
 					});
                 ');
             }

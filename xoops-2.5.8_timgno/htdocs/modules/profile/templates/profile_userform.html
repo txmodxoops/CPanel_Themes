@@ -1,0 +1,40 @@
+<fieldset class="pad10">
+	<legend class="bold"><{$lang_login}></legend>		
+		<form action="user.php" method="post">
+			<div class="form-group">
+				<label for="inputUsername"><{$lang_username}></label>
+				<input type="text" class="form-control" name="uname" id="inputUsername" placeholder="<{$lang_username}>...">
+			</div>
+			<div class="form-group">
+				<label for="inputPassword"><{$lang_password}></label>
+				<input type="password" class="form-control" name="pass" id="inputPassword" placeholder="<{$lang_password}>...">
+			</div>			
+			<{if isset($lang_rememberme)}>
+			<div class="checkbox">
+				<label>
+				<input type="checkbox" name="rememberme" value="On" checked /> <{$lang_rememberme}>
+				</label>
+			</div>
+			<{/if}>    
+			<input type="hidden" name="op" value="login" />
+			<input type="hidden" name="xoops_redirect" value="<{$redirect_page}>" />
+			<input type="submit" class="btn btn-default" value="<{$lang_login}>" />
+		</form>
+		<br />
+		<a name="lost"></a>
+	<div><{$lang_notregister}><br /></div>
+</fieldset>
+<br />
+<fieldset class="pad10">
+	<legend class="bold"><{$lang_lostpassword}></legend>
+		<div><br /><{$lang_noproblem}></div>
+			<form action="lostpass.php" method="post">
+				<div class="form-group">
+					<label for="inputYourEmail"><{$lang_youremail}></label>
+					<input type="text" class="form-control" name="email" id="inputYourEmail" placeholder="<{$lang_youremail}>...">
+				</div>				
+				<input type="hidden" name="op" value="mailpasswd" />
+				<input type="hidden" name="t" value="<{$mailpasswd_token}>" />
+				<input type="submit" class="btn btn-default" value="<{$lang_sendpassword}>" />
+			</form>
+</fieldset>

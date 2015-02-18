@@ -178,16 +178,16 @@ class SystemMenuHandler
         }
         $breadcrumb = $menuItems[$currentoption];
         $menuItems[$currentoption] = 'current';
-        $menu = "<div id='buttontop_mod'>";
+        $menu = "<div id='buttontop'>";
         $menu .= "<table class=\"table table-bordered\">\n<tr>";
-        $menu .= "<td style='font-size: 12px; text-align: left; color: #2F5376; padding: 0 6px; line-height: 18px;'>";
+        $menu .= "<td><ul class=\"nav nav-pills\">";
         foreach ($this->_menutop as $k => $v) {
-            $menu .= " <a href=\"$k\">$v</a> |";
+            $menu .= "<li role=\"presentation\"><a href=\"$k\">$v</a>";
         }
         $menu = substr($menu, 0, -1);
 
-        $menu .= "</td>";
-        $menu .= "<td style='text-align: right;'><strong>" . $this->_obj->getVar( 'name' ) . "</strong> : " . $breadcrumb . "</td>";
+        $menu .= "</ul></td>";
+        $menu .= "<td style='text-align: right; padding-top: 18px;'><strong>" . $this->_obj->getVar( 'name' ) . "</strong> : " . $breadcrumb . "</td>";
         $menu .= "</tr>\n</table>\n";
         $menu .= "</div>\n";
         $menu .= "<ul class=\"nav nav-tabs\">";

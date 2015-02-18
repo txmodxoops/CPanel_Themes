@@ -1,6 +1,8 @@
 //Load Metis Menu
 $(function() {
-    $('#side-menu').metisMenu();
+    $('#side-menu').metisMenu({
+		doubleTapToGo: true
+	});
 });
 
 //Loads the correct sidebar on window load,
@@ -28,7 +30,7 @@ $(function() {
     var url = window.location;
     var element = $('ul.nav a').filter(function() {
         return this.href == url || url.href.indexOf(this.href) == 0;
-    }).addClass('active').parent().parent().parent().addClass('in').parent();
+    }).addClass('active').parent().addClass('in').parent();
     if (element.is('li')) {
         element.addClass('active');
     }
@@ -55,5 +57,12 @@ $(function() {
 $(function() {
 	$('#dataTables').DataTable({
 		responsive: true
+	});
+});
+// perform Bootstrap tab
+$(function() {
+	$('li a:first').click(function (e) {
+		e.preventDefault(),
+		$(this).tab('show')
 	});
 });

@@ -1,0 +1,9 @@
+<ul class="breadcrumb">
+    <{foreach item=itm from=$xoBreadcrumbs name=bcloop}>
+        <li><{if $itm.link}><a href="<{$itm.link}>" title="<{$itm.title}>"><{$itm.title}></a><{else}><{$itm.title}><{/if}></li>        
+        <{if !$smarty.foreach.bcloop.last}>
+            <span class="divider">&raquo;</span>
+        <{/if}>
+    <{/foreach}>
+</ul>
+<br class="clear"/>
