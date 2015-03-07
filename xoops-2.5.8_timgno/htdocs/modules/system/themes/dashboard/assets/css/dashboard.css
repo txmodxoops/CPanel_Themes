@@ -22,17 +22,27 @@ body {
 }
 
 #page-wrapper {
-    padding: 15px 15px;
-    min-height: 600px;
-    background:#F3F3F3;
-   
+    padding: 10px 10px;
+    min-height: 400px;    
+	z-index: 1;
+	box-shadow: 0 0 3px #131313;
+	padding-bottom: 80px !important;
+	margin-bottom: -78px !important;
+	overflow: hidden;
+	-webkit-transition: 0.2s;
+	-moz-transition: 0.2s;
+	-o-transition: 0.2s;
+	transition: 0.2s;
+	color: inherit;
+	background:#F3F3F3;
 }
+
 #page-inner {
     width:100%;
-    margin:10px 20px 10px 0px;
+    margin:2px 7px 2px 0px;
     background-color:#fff!important;
-    padding:10px;
-    min-height:1200px;
+    padding:8px;
+    min-height:800px;
 }
 
 #logout {
@@ -298,10 +308,14 @@ ul.list-inline li.box-icon a.thumbnail {
 	padding: 5px;
 }
 
+ul.social-icons {	
+	margin: 0 8px 0;
+	padding: .8em;
+}
+
 ul.social-icons li {	
 	display: inline;
-	margin: 0 10px 0;
-	padding: 2px;
+	margin: 0 8px 0;
 }
 
 ul.social-icons li a:hover {	
@@ -543,8 +557,7 @@ ul.social-icons li a:hover {
     #page-wrapper{        
 		margin: 0 0 0 260px;
         padding: 15px 30px;
-        min-height: 1200px;
-		
+        min-height: 300px;		
     }	
     .navbar-side {
         z-index: 1;

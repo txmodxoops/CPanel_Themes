@@ -10,22 +10,16 @@
 				<{if $xo_sys_breadcrumb}>
 					<div class="row">
 						<div class="col-lg-12">						
-							<ol class="breadcrumb">	
-							<{foreach item=breadcrumb from=$xo_sys_breadcrumb}>					
-								<{if $breadcrumb.home}>
-									<li class="breadcrumb-dashboard"><a href="<{$breadcrumb.link}>" title="<{$breadcrumb.title}>"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-								<{elseif $breadcrumb.link}>
-									<li class="breadcrumb-link"><a href="<{$breadcrumb.link}>" title="<{$breadcrumb.title}>"><{$breadcrumb.title}></a></li>
-								<{else}>
-									<li class="breadcrumb-title"><{$breadcrumb.title}></li>
-								<{/if}>	
-							<{/foreach}>					
-							</ol>					
+							<ul class="breadcrumb">							
+							<{foreach item=item from=$xo_sys_breadcrumb}>
+								<li><{if $item.link}><a href="<{$item.link}>" title="<{$item.title}>"><{$item.title}></a><{else}><{$item.title}><{/if}></li>								
+							<{/foreach}>
+							</ul>					
 						</div>
 					</div>
 				<{/if}>
 				<{* /.row *}>
-				<{if $xoops_contents || $xo_system_menu}>
+				<{if $xoops_contents && $admin_warnings_enable !== false}>
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="panel panel-default">						
