@@ -60,7 +60,8 @@ class XoopsFormTextDateSelect extends XoopsFormText
                 $included = true;
                 $GLOBALS['xoTheme']->addScript('','', '
                     $(function() {						
-						$( ".datepicker" ).datepicker({
+						$.datepicker.setDefaults( $.extend($.datepicker.regional["'. _LANGCODE .'"]) );
+						$( "#datepicker-' . ucfirst($ele_name) . '" ).datepicker({
 							showOn: "button",
 							buttonImage: "'.XOOPS_URL.'/images/calendar.png",
 							buttonImageOnly: true,
@@ -70,11 +71,11 @@ class XoopsFormTextDateSelect extends XoopsFormText
 							showButtonPanel: true,
 							showOtherMonths: true,
 							selectOtherMonths: true
-						}).regional[ "'. _LANGCODE .'" ];
+						})
 					});
                 ');
             }
         }
-        return "<input type='text' name='" . $ele_name . "' id='" . $ele_name . "' class='datepicker' size='" . $this->getSize() . "' value='" . $display_value . "'" . $this->getExtra() . " />";
+        return "<input type='text' name='" . $ele_name . "' class='form-control' id='datepicker-" . ucfirst($ele_name) . "' size='" . $this->getSize() . "' value=''" . $this->getExtra() . " />";
     }
 }

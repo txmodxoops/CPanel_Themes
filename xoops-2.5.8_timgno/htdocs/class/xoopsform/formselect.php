@@ -204,7 +204,7 @@ class XoopsFormSelect extends XoopsFormElement
         $ele_title = $this->getTitle();
         $ele_value = $this->getValue();
         $ele_options = $this->getOptions();
-        $ret = '<select size="' . $this->getSize() . '"' . $this->getExtra();
+        $ret = '<select class="form-control" size="' . $this->getSize() . '"' . $this->getExtra();
         if ($this->isMultiple() != false) {
             $ret .= ' multiple name="' . $ele_name . '[]" id="' . $ele_name . '" title="'. $ele_title. '">';
         } else {

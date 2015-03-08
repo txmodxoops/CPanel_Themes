@@ -1,17 +1,21 @@
+/*
+ * Dashboard Responsive Admin Theme
+ *
+ * @copyright       Txmod Xoops <http://www.txmodxoops.org/> - Xoops Project <http://www.xoops.org/>
+ * @license         http://www.fsf.org/copyleft/gpl.html GNU public license 3.0
+ * @package         themes
+ * @since           2.5.x
+ * @author          Txmod Xoops <http://www.txmodxoops.org/>
+ * @maintained      Xoops Design Theme <http://www.xoops.org/>
+ *
+ * @version         $Id 1.0
+*/
+/* ==================== Import others style cheats ==================== */
+@import url(logger.css);
 
-/*=============================================================
-    Authour URI: www.binarycart.com
-    License: Commons Attribution 3.0
+/* ==================== General definitions ==================== */
+html { }
 
-    http://creativecommons.org/licenses/by/3.0/
-
-    100% To use For Personal And Commercial Use.
-    IN EXCHANGE JUST GIVE US CREDITS AND TELL YOUR FRIENDS ABOUT US
-   
-    ========================================================  */
-/*==============================================
-    GENERAL  STYLES    
-    =============================================*/
 body {
     font-family: 'Open Sans', sans-serif;
 }
@@ -23,11 +27,11 @@ body {
 
 #page-wrapper {
     padding: 10px 10px;
-    min-height: 400px;    
+    min-height: 380px;    
 	z-index: 1;
 	box-shadow: 0 0 3px #131313;
-	padding-bottom: 80px !important;
-	margin-bottom: -78px !important;
+	padding-bottom: 70px !important;
+	margin-bottom: -68px !important;
 	overflow: hidden;
 	-webkit-transition: 0.2s;
 	-moz-transition: 0.2s;
@@ -42,7 +46,7 @@ body {
     margin:2px 7px 2px 0px;
     background-color:#fff!important;
     padding:8px;
-    min-height:800px;
+    min-height:780px;
 }
 
 #logout {

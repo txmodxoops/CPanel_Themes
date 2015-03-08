@@ -152,7 +152,7 @@ class XoopsFormDhtmlTextArea extends XoopsFormTextArea
         $ret .= "<input type='button' class='btn btn-info' onclick=\"XoopsCheckLength('" . $this->getName() . "', '" . @$this->configs['maxlength'] . "', '" . _XOOPS_FORM_ALT_LENGTH . "', '" . _XOOPS_FORM_ALT_LENGTH_MAX . "');\" value=' ? ' title='" . _XOOPS_FORM_ALT_CHECKLENGTH . "' />";
         $ret .= "<br />\n";
         // the textarea box
-        $ret .= "<textarea id='" . $this->getName() . "' name='" . $this->getName() . "' title='". $this->getTitle() . "' onselect=\"xoopsSavePosition('" . $this->getName() . "');\" onclick=\"xoopsSavePosition('" . $this->getName() . "');\" onkeyup=\"xoopsSavePosition('" . $this->getName() . "');\" cols='" . $this->getCols() . "' rows='" . $this->getRows() . "'" . $this->getExtra() . ">" . $this->getValue() . "</textarea><br />\n";
+        $ret .= "<textarea id='" . $this->getName() . "' name='" . $this->getName() . "' class=\"form-control\" title='". $this->getTitle() . "' onselect=\"xoopsSavePosition('" . $this->getName() . "');\" onclick=\"xoopsSavePosition('" . $this->getName() . "');\" onkeyup=\"xoopsSavePosition('" . $this->getName() . "');\" cols='" . $this->getCols() . "' rows='" . $this->getRows() . "'" . $this->getExtra() . ">" . $this->getValue() . "</textarea><br />\n";
 
         if (empty($this->skipPreview)) {
             if (empty($GLOBALS['xoTheme'])) {
@@ -214,20 +214,20 @@ class XoopsFormDhtmlTextArea extends XoopsFormTextArea
         $textarea_id = $this->getName();
         $hiddentext = $this->_hiddenText;
 
-        $fontStr = "<script type=\"text/javascript\">" . "var _editor_dialog = ''" . "+ '<select id=\'{$textarea_id}Size\' onchange=\'xoopsSetElementAttribute(\"size\", this.options[this.selectedIndex].value, \"{$textarea_id}\", \"{$hiddentext}\");\'>'" . "+ '<option value=\'SIZE\'>" . _SIZE . "</option>'";
+        $fontStr = "<script type=\"text/javascript\">" . "var _editor_dialog = ''" . "+ '<select class=\"form-control\" id=\'{$textarea_id}Size\' onchange=\'xoopsSetElementAttribute(\"size\", this.options[this.selectedIndex].value, \"{$textarea_id}\", \"{$hiddentext}\");\'>'" . "+ '<option value=\'SIZE\'>" . _SIZE . "</option>'";
         foreach ($GLOBALS["formtextdhtml_sizes"] as $_val => $_name) {
             $fontStr .= " + '<option value=\'{$_val}\'>{$_name}</option>'";
         }
         ;
         $fontStr .= " + '</select> '";
-        $fontStr .= "+ '<select id=\'{$textarea_id}Font\' onchange=\'xoopsSetElementAttribute(\"font\", this.options[this.selectedIndex].value, \"{$textarea_id}\", \"{$hiddentext}\");\'>'" . "+ '<option value=\'FONT\'>" . _FONT . "</option>'";
+        $fontStr .= "+ '<select class=\"form-control\" id=\'{$textarea_id}Font\' onchange=\'xoopsSetElementAttribute(\"font\", this.options[this.selectedIndex].value, \"{$textarea_id}\", \"{$hiddentext}\");\'>'" . "+ '<option value=\'FONT\'>" . _FONT . "</option>'";
         $fontarray = ! empty($GLOBALS["formtextdhtml_fonts"]) ? $GLOBALS["formtextdhtml_fonts"] : array("Arial" , "Courier" , "Georgia" , "Helvetica" , "Impact" , "Verdana" , "Haettenschweiler");
         foreach ($fontarray as $font) {
             $fontStr .= " + '<option value=\'{$font}\'>{$font}</option>'";
         }
         ;
         $fontStr .= " + '</select> '";
-        $fontStr .= "+ '<select id=\'{$textarea_id}Color\' onchange=\'xoopsSetElementAttribute(\"color\", this.options[this.selectedIndex].value, \"{$textarea_id}\", \"{$hiddentext}\");\'>'" . "+ '<option value=\'COLOR\'>" . _COLOR . "</option>';" . "var _color_array = new Array('00', '33', '66', '99', 'CC', 'FF');
+        $fontStr .= "+ '<select class=\"form-control\" id=\'{$textarea_id}Color\' onchange=\'xoopsSetElementAttribute(\"color\", this.options[this.selectedIndex].value, \"{$textarea_id}\", \"{$hiddentext}\");\'>'" . "+ '<option value=\'COLOR\'>" . _COLOR . "</option>';" . "var _color_array = new Array('00', '33', '66', '99', 'CC', 'FF');
             for (var i = 0; i < _color_array.length; i ++) {
                 for (var j = 0; j < _color_array.length; j ++) {
                     for (var k = 0; k < _color_array.length; k ++) {

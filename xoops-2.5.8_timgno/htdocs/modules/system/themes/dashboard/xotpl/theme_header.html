@@ -31,21 +31,12 @@
 						</ul>
 					</li>
 					<{/foreach}>								
-				</ul>
+				</ul>				
 				<div id="logout">
+					<{* Date Time Now *}>
+					<{$smarty.now|date_format:"%Y-%m-%d %H:%M:%S"}>
 					<a href="<{xoAppUrl /}>" class="btn btn-success square-btn-adjust"><i class="fa fa-home fa-sm"></i> <{$smarty.const._YOURHOME}></a>
 					<a href="<{xoAppUrl user.php?op=logout}>" class="btn btn-danger square-btn-adjust"><i class="fa fa-power-off fa-sm"></i> <{$smarty.const._LOGOUT}></a>
 				</div>
 			</div>			
-        </nav>   
-           <!-- /. NAV TOP  -->
-        <nav class="navbar-default navbar-side" role="navigation">
-            <div class="sidebar-collapse">
-                <ul class="nav" id="main-menu">										
-                    <li>
-                        <a class="active-menu" href="<{xoAppUrl admin.php}>"><i class="fa fa-dashboard fa-2x"></i> Dashboard</a>
-                    </li>                    	
-                </ul>               
-            </div>            
-        </nav>  
-        <!-- /. NAV SIDE  -->
+        </nav><!-- /. NAV TOP  -->        

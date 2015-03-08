@@ -1,6 +1,6 @@
 
     <{$xoForm.javascript}>
-    <form id="<{$xoForm.name}>" name="<{$xoForm.name}>" action="<{$xoForm.action}>" method="<{$xoForm.method}>" <{$xoForm.extra}> >
+    <form class='form-inline' id="<{$xoForm.name}>" name="<{$xoForm.name}>" action="<{$xoForm.action}>" method="<{$xoForm.method}>" <{$xoForm.extra}> >
         <table class="table table-bordered" id="profile-form-<{$xoForm.name}>">
 			<tbody>
             <{foreach item=element from=$xoForm.elements}>
@@ -16,7 +16,9 @@
                             <{/if}>
                         </td>
                         <td class="<{cycle values='odd, even'}>">
-                            <{$element.body}>
+							<div class="form-group">
+								<{$element.body}>
+							</div>
                         </td>
                     </tr>
                 <{/if}>

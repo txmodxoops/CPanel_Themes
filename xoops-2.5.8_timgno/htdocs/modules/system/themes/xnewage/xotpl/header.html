@@ -74,15 +74,16 @@
                     <{* /.dropdown-alerts *}>
                 </li>
                 <{* /.dropdown *}>
+				<{xoMemberInfo assign=member_info infos="uname|user_avatar"}>
                 <li class="dropdown">
 					<a href="#" class="dropdown-toggle account" data-toggle="dropdown">                                            
 						<div class="avatar">
-							<img src="<{xoImgUrl assets/img/avatar.jpg}>" class="img-rounded" alt="avatar" />
+							<img src="<{$xoops_url}>/uploads/<{$member_info.user_avatar}>" class="img-rounded" alt="avatar" />
 						</div>
 						<i class="fa fa-caret-down pull-right"></i>
 						<div class="user-mini pull-right">
 							<span class="welcome">Welcome,</span>
-							<span><{$xoops_uname}></span>
+							<span><{$member_info.uname}></span>
 						</div>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
