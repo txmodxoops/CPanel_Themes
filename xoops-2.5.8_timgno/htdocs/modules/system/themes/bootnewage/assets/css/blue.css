@@ -1,0 +1,161 @@
+/*
+ * Dashboard Responsive Admin Theme
+ *
+ * @copyright       Txmod Xoops <http://www.txmodxoops.org/> - Xoops Project <http://www.xoops.org/>
+ * @license         http://www.fsf.org/copyleft/gpl.html GNU public license 3.0
+ * @package         themes
+ * @since           2.5.x
+ * @author          Txmod Xoops <http://www.txmodxoops.org/>
+ * @maintained      Xoops Design Theme <http://www.xoops.org/>
+ *
+ * @version         $Id 1.0
+*/
+/* ==================== General definitions ==================== */
+
+#top-nav.navbar.navbar-inverse.navbar-static-top {
+	color:#fff;
+	background:#5364fc;
+}
+
+#top-nav.navbar.navbar-inverse.navbar-static-top a i {
+	color:#fff;
+	background:inherit;
+}
+
+#top-nav.navbar.navbar-inverse.navbar-static-top a:hover i {
+	color:#e94;
+	background:#f3f4fc;
+	text-decoration: none;
+}
+
+#top-nav li img.user-avatar {
+	margin: -10px 10px -10px 10px;
+	border-radius: 4px;
+	width: 40px;
+	height: 40px;
+}
+
+#top-nav li img.user-avatar a i {
+	color:#222;
+	background:inherit;
+}
+
+#top-nav li img.user-avatar a:hover i {
+	color:#fff;
+	background:#f3f4fc;
+	text-decoration: none;
+}
+
+/* Dropdown Submenu Top */
+
+.dropdown-submenu{	
+	position:relative;	
+}
+
+.dropdown-submenu>.dropdown-menu {
+	top:0;
+	left:100%;
+	margin-top:-6px;
+	margin-left:-1px;
+	-webkit-border-radius:0 6px 6px 6px;
+	-moz-border-radius:0 6px 6px 6px;
+	border-radius:0 6px 6px 6px;
+}
+
+.dropdown-submenu:hover>.dropdown-menu {
+    display: block;
+}
+
+.dropdown-submenu>a.submenu-after:after {
+	display:block;
+	content:" ";
+	float:right;
+	width:0;
+	height:0;
+	border-color:transparent;
+	border-style:solid;
+	border-width:5px 0 5px 5px;
+	border-left-color:#cccccc;
+	margin-top:5px;
+	margin-right:-10px;
+	overflow: auto;
+}
+
+.dropdown-submenu:hover>a.submenu-after:after {
+	border-left-color:#555;
+}
+
+.dropdown-submenu.pull-left {
+	float:none;
+}
+
+.dropdown-submenu.pull-left>.dropdown-menu {
+	left:-100%;
+	margin-left:10px;
+	-webkit-border-radius:6px 0 6px 6px;
+	-moz-border-radius:6px 0 6px 6px;
+	border-radius:6px 0 6px 6px;
+}
+
+li.bg-color {
+	margin: 3px;
+	padding: 2px 0;
+	-webkit-border-radius:6px 6px 6px 6px;
+	-moz-border-radius:6px 6px 6px 6px;
+	border-radius:6px 6px 6px 6px;
+}
+li.bg-color.bg-dark a {
+	color:#fff;
+	background:#3d3636;
+}
+li.bg-color.bg-silver a {
+	color:#222;
+	background:#cccccc;
+}
+li.bg-color.bg-orange a {
+	color:#222;
+	background:#faa90c;
+}
+li.bg-color.bg-red a {
+	color:#fff;
+	background:#ff4d00;
+}
+li.bg-color.bg-green a {
+	color:#222;
+	background:#1eb324;
+}
+li.bg-color.bg-yellow a {
+	color:#222;
+	background:#fae105;
+}
+li.bg-color.bg-blue a {
+	color:#fff;
+	background:#5364fc;
+}
+
+.sidenav {
+	color:#fff;
+	background:#5364fc;
+}
+
+.sidenav ul li a {
+	color:#fff;
+	background:inherit;
+}
+
+.sidenav ul li a:hover {
+	color:#e94;
+	background:#f3f4fc;
+	text-decoration: none;
+}
+
+.row.row-preferences {
+	margin: 20px 0 0 10px;
+}
+
+footer {
+	margin-top:20px;
+	padding-top:20px;
+	padding-bottom:20px;
+	background-color:#efefef;
+}

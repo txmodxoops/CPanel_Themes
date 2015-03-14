@@ -289,7 +289,7 @@ function xoops_footer()
  */
 function xoops_error($msg, $title = '')
 {
-    echo '<div class="alert alert-danger text-center">';
+    echo '<div class="alert alert-danger text-center" role="alert">';
     if ($title != '') {
         echo '<strong>' . $title . '</strong><br /><br />';
     }

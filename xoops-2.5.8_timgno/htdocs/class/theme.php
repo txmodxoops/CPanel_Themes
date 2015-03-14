@@ -9,14 +9,14 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  *
- * @copyright       The XOOPS project http://sourceforge.net/projects/xoops/
+ * @copyright       (c) 2000-2014 XOOPS Project (www.xoops.org)
  * @license         GNU GPL 2 (http://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
  * @author          Skalpa Keo <skalpa@xoops.org>
  * @author          Taiwen Jiang <phppp@users.sourceforge.net>
  * @since           2.3.0
  * @package         kernel
  * @subpackage      xos_opal_Theme
- * @version         $Id: theme.php 12537 2014-05-19 14:19:33Z beckmi $
+ * @version         $Id: theme.php 13015 2015-03-14 12:56:47Z timgno $
  */
 
 defined('XOOPS_ROOT_PATH') || die('Restricted access');
@@ -280,7 +280,14 @@ class xos_opal_Theme
             'xoops_dirname' => isset($GLOBALS['xoopsModule'])&& is_object($GLOBALS['xoopsModule']) ? $GLOBALS['xoopsModule']->getVar('dirname') : 'system',
             'xoops_banner' => ($GLOBALS['xoopsConfig']['banners'] && $this->renderBanner) ? xoops_getbanner() : '&nbsp;',
             'xoops_pagetitle' => isset($GLOBALS['xoopsModule']) && is_object($GLOBALS['xoopsModule']) ? $GLOBALS['xoopsModule']->getVar('name') : htmlspecialchars($GLOBALS['xoopsConfig']['slogan'], ENT_QUOTES)));
-
+		// From XoopsCore by Timgno
+		$this->template->assign(array(
+            'theme_path' => $this->path, 'theme_tpl' => $this->path . '/xotpl', 'theme_url' => $this->url,
+            'theme_img'  => $this->url . '/img', 'theme_icons' => $this->url . '/icons',
+            'theme_css'  => $this->url . '/css', 'theme_js' => $this->url . '/js',
+            'theme_lang' => $this->url . '/language',
+        ));
+		// --------------------------------------------------------------------
         if (isset($GLOBALS['xoopsUser']) && is_object($GLOBALS['xoopsUser'])) {
             $this->template->assign(array(
                 'xoops_isuser' => true,

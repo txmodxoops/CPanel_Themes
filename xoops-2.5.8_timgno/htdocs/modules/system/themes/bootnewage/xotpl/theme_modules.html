@@ -1,0 +1,21 @@
+<table class="table table-striped">    
+	<thead>
+		<tr>
+			<th colspan="4"><{$smarty.const._OXYGEN_INSTALLEDMODULES}></th>
+		</tr>
+	</thead>
+	<tbody>
+		<{foreach item=mod from=$modules}>
+		<tr>	
+			<td class="box-icon text-center"><{$mod.id}></td>
+			<td class="box-icon text-center"><a class="thumbnail" href="<{$mod.link}>" title="<{$mod.title}>">
+				<img class="img-rounded" src='<{$mod.icon|default:"$theme_img/modules.png"}>' alt="<{$mod.title}>" />
+				</a>
+			</td>
+			<td class="box-icon text-center"><a class="thumbnail" href="<{$mod.link}>" title="<{$mod.title}>"><span><{$mod.title}></span></a>
+			</td>
+			<td class="box-icon text-center"><span><{$mod.description}></span></td>
+		</tr>
+		<{/foreach}>
+	</tbody>
+</table>
