@@ -301,7 +301,7 @@ class XoopsGuiBootNewage extends XoopsSystemGui
             }
             return;
         }
-
+		$item_id = 1;
         foreach ($mods as $mod) {
             $sadmin = $moduleperm_handler->checkRight ( 'module_admin', $mod->getVar ( 'mid' ), $xoopsUser->getGroups () );
             if ($sadmin) {
@@ -312,6 +312,7 @@ class XoopsGuiBootNewage extends XoopsSystemGui
                 } else {
                     $rtn ['link'] = XOOPS_URL . '/modules/system/admin.php?fct=preferences&amp;op=showmod&amp;mod=' . $mod->getVar ( 'mid' );
                 }
+				$rtn ['id'] = $item_id;
                 $rtn ['title'] = htmlspecialchars($mod->getVar ('name'), ENT_QUOTES);
 				$rtn ['image'] = $mod->getInfo('image');
                 $rtn ['description'] = $mod->getInfo('description');
@@ -323,7 +324,19 @@ class XoopsGuiBootNewage extends XoopsSystemGui
                 }
                 $tpl->append ( 'modules', $rtn );
             }
-        }
+			$item_id++;
+        }	
+		$limit = 10;
+		$start = isset($_REQUEST['start']) ? $_REQUEST['start'] : 0;
+		if ( $item_id > $limit ) {				
+			xoops_load('XoopsPageNav');
+			$pagenav = new XoopsPageNav($item_id, $limit, $start, 'start', 'limit=' . $limit);
+			$pagenav = $pagenav->renderNav(4);
+		} else {
+			$pagenav = '';
+		} 
+		unset($item_id);
+		$tpl->assign('pagenav', $pagenav);
     }
 
 	/*function footer()

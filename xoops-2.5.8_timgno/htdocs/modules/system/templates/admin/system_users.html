@@ -6,11 +6,11 @@
     <div class="pull-left"><{$form_sort}></div>
     <div class="pull-right">
         <div class="xo-buttons">
-            <a class="ui-corner-all btn" href="admin.php?fct=users&amp;op=users_synchronize&amp;status=2" title="<{$smarty.const._AM_SYSTEM_USERS_SYNCHRONIZE}>">
+            <a class="btn btn-default" href="admin.php?fct=users&amp;op=users_synchronize&amp;status=2" title="<{$smarty.const._AM_SYSTEM_USERS_SYNCHRONIZE}>">
                 <img src="<{xoAdminIcons reload.png}>" alt="<{$smarty.const._AM_SYSTEM_USERS_SYNCHRONIZE}>" />
                 <{$smarty.const._AM_SYSTEM_USERS_SYNCHRONIZE}>
             </a>
-            <a class="ui-corner-all btn" href="admin.php?fct=users&amp;op=users_add" title="<{$smarty.const._AM_SYSTEM_USERS_ADDUSER}>">
+            <a class="btn btn-default" href="admin.php?fct=users&amp;op=users_add" title="<{$smarty.const._AM_SYSTEM_USERS_ADDUSER}>">
                 <img src="<{xoAdminIcons user_add.png}>" alt="<{$smarty.const._AM_SYSTEM_USERS_ADDUSER}>" />
                 <{$smarty.const._AM_SYSTEM_USERS_ADDUSER}>
             </a>
@@ -70,6 +70,7 @@
         </tr>
         <{/foreach}>
         </tbody>
+		<tbody>
         <tr>
             <td class="form-group" colspan='8'>				
 				<select name='fct' onChange='changeDisplay (this.value, "groups", "edit_group")'>
@@ -88,6 +89,7 @@
 				<input type='submit' name='Submit' class="btn btn-default" />
             </td>
         </tr>
+		</tbody>
         </form>
         <{/if}>
         <!--No found-->
@@ -102,31 +104,33 @@
         <{foreach item=users from=$users_popup}>
             <div id="dialog<{$users.uid}>" title="<{$users.uname}>" style='display:none;'>
                 <table>
-                    <tr>
-                        <td class="text-center">
-                            <img src="<{$users.user_avatar}>" alt="<{$users.uname}>" title="<{$users.uname}>" />
-                        </td>
-                        <td class="text-center">
-                            <a href='mailto:<{$users.email}>'><img src="<{xoAdminIcons mail_send.png}>" alt="" title=<{$smarty.const._AM_SYSTEM_USERS_EMAIL}> /></a>
-                            <a href='javascript:openWithSelfMain("<{$xoops_url}>/pmlite.php?send2=1&amp;to_userid=<{$users.uid}>","pmlite",450,370);'><img src="<{xoAdminIcons pm.png}>" alt="" title=<{$smarty.const._AM_SYSTEM_USERS_PM}> /></a>
-                            <a href='<{$users.url}>' rel='external'><img src="<{xoAdminIcons url.png}>" alt="" title=<{$smarty.const._AM_SYSTEM_USERS_URL}> ></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <ul style="border: 1px solid #666; padding: 8px;">
-                                <{if $users.user_name}><li><span class="bold"><{$smarty.const._AM_SYSTEM_USERS_NAME}></span>&nbsp;:&nbsp;<{$users.name}></li><{/if}>
-                                <li><span class="bold"><{$smarty.const._AM_SYSTEM_USERS_UNAME}></span>&nbsp;:&nbsp;<{$users.uname}></li>
-                                <li><span class="bold"><{$smarty.const._AM_SYSTEM_USERS_EMAIL}></span>&nbsp;:&nbsp;<{$users.email}></li>
-                                <{if $users.user_url}><li><span class="bold"><{$smarty.const._AM_SYSTEM_USERS_URL}></span>&nbsp;:&nbsp;<{$users.url}> </li><{/if}>
-                                <{if $users.user_icq}><li><span class="bold"><{$smarty.const._AM_SYSTEM_USERS_ICQ}></span>&nbsp;:&nbsp;<{$users.user_icq}></li><{/if}>
-                                <{if $users.user_aim}><li><span class="bold"><{$smarty.const._AM_SYSTEM_USERS_AIM}></span>&nbsp;:&nbsp;<{$users.user_aim}></li><{/if}>
-                                <{if $users.user_yim}><li><span class="bold"><{$smarty.const._AM_SYSTEM_USERS_YIM}></span>&nbsp;:&nbsp;<{$users.user_yim}></li><{/if}>
-                                <{if $users.user_msnm}><li><span class="bold"><{$smarty.const._AM_SYSTEM_USERS_MSNM}></span>&nbsp;:&nbsp;<{$users.user_msnm}> </li><{/if}>
-                            </ul>
-                        </td>
-                    </tr>
-                </table>
+                    <tbody>
+						<tr>
+							<td class="text-center">
+								<img src="<{$users.user_avatar}>" alt="<{$users.uname}>" title="<{$users.uname}>" />
+							</td>
+							<td class="text-center">
+								<a href='mailto:<{$users.email}>'><img src="<{xoAdminIcons mail_send.png}>" alt="" title=<{$smarty.const._AM_SYSTEM_USERS_EMAIL}> /></a>
+								<a href='javascript:openWithSelfMain("<{$xoops_url}>/pmlite.php?send2=1&amp;to_userid=<{$users.uid}>","pmlite",450,370);'><img src="<{xoAdminIcons pm.png}>" alt="" title=<{$smarty.const._AM_SYSTEM_USERS_PM}> /></a>
+								<a href='<{$users.url}>' rel='external'><img src="<{xoAdminIcons url.png}>" alt="" title=<{$smarty.const._AM_SYSTEM_USERS_URL}> ></a>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2">
+								<ul style="border: 1px solid #666; padding: 8px;">
+									<{if $users.user_name}><li><span class="bold"><{$smarty.const._AM_SYSTEM_USERS_NAME}></span>&nbsp;:&nbsp;<{$users.name}></li><{/if}>
+									<li><span class="bold"><{$smarty.const._AM_SYSTEM_USERS_UNAME}></span>&nbsp;:&nbsp;<{$users.uname}></li>
+									<li><span class="bold"><{$smarty.const._AM_SYSTEM_USERS_EMAIL}></span>&nbsp;:&nbsp;<{$users.email}></li>
+									<{if $users.user_url}><li><span class="bold"><{$smarty.const._AM_SYSTEM_USERS_URL}></span>&nbsp;:&nbsp;<{$users.url}> </li><{/if}>
+									<{if $users.user_icq}><li><span class="bold"><{$smarty.const._AM_SYSTEM_USERS_ICQ}></span>&nbsp;:&nbsp;<{$users.user_icq}></li><{/if}>
+									<{if $users.user_aim}><li><span class="bold"><{$smarty.const._AM_SYSTEM_USERS_AIM}></span>&nbsp;:&nbsp;<{$users.user_aim}></li><{/if}>
+									<{if $users.user_yim}><li><span class="bold"><{$smarty.const._AM_SYSTEM_USERS_YIM}></span>&nbsp;:&nbsp;<{$users.user_yim}></li><{/if}>
+									<{if $users.user_msnm}><li><span class="bold"><{$smarty.const._AM_SYSTEM_USERS_MSNM}></span>&nbsp;:&nbsp;<{$users.user_msnm}> </li><{/if}>
+								</ul>
+							</td>
+						</tr>
+                    </tbody>
+			   </table>
             </div>
         <{/foreach}>
     <{/if}>
@@ -136,5 +140,5 @@
 <br />
 <!-- Display Avatar form (add,edit) -->
 <{if $form}>
-<div class="spacer"><{$form}></div>
+<div class="form-inline"><{$form}></div>
 <{/if}>

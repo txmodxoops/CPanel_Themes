@@ -190,9 +190,9 @@ class SystemMenuHandler
         $menu .= "<td style='text-align: right; padding-top: 18px;'><strong>" . $this->_obj->getVar( 'name' ) . "</strong> : " . $breadcrumb . "</td>";
         $menu .= "</tr>\n</table>\n";
         $menu .= "</div>\n";
-        $menu .= "<ul class=\"nav nav-tabs\">";
+        $menu .= "<ul class=\"nav nav-tabs nav-module\">";
         foreach ($this->_menutabs as $k => $v) {
-            $menu .= "<li id='" . $menuItems[$i] . " role=\"presentation\"'><a href='" . XOOPS_URL . "/modules/" . $this->_obj->getVar( 'dirname' ) . "/" . $k . "'><span>$v</span></a></li>\n";
+            $menu .= "<li id='" . $menuItems[$i] . "' role=\"presentation\"><a href='" . XOOPS_URL . "/modules/" . $this->_obj->getVar( 'dirname' ) . "/" . $k . "'><span>$v</span></a></li>\n";
             $i++;
         }
         $menu .= "</ul>\n";

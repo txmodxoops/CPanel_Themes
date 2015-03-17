@@ -234,12 +234,12 @@ class ModuleAdmin
 
             case "folder":
                 if (!is_dir($value)) {
-                    $line .= "<span style='color : red; font-weight : bold;'>";
+                    $line .= "<span class='red bold'>";
                     $line .= "<img src='" . $path . "0.png' >";
                     $line .= sprintf(_AM_MODULEADMIN_CONFIG_FOLDERKO, $value);
                     $line .= "</span>\n";
                 } else {
-                    $line .= "<span style='color : green;'>";
+                    $line .= "<span class='green'>";
                     $line .= "<img src='" . $path . "1.png' >";
                     $line .= sprintf(_AM_MODULEADMIN_CONFIG_FOLDEROK, $value);
                     $line .= "</span>\n";
@@ -249,12 +249,12 @@ class ModuleAdmin
             case "chmod":
                 if (is_dir($value[0])) {
                     if (substr(decoct(fileperms($value[0])),2) != $value[1]) {
-                        $line .= "<span style='color : red; font-weight : bold;'>";
+                        $line .= "<span class='red bold'>";
                         $line .= "<img src='" . $path . "0.png' >";
                         $line .= sprintf(_AM_MODULEADMIN_CONFIG_CHMOD, $value[0], $value[1], substr(decoct(fileperms($value[0])),2));
                         $line .= "</span>\n";
                     } else {
-                        $line .= "<span style='color : green;'>";
+                        $line .= "<span class='green'>";
                         $line .= "<img src='" . $path . "1.png' >";
                         $line .= sprintf(_AM_MODULEADMIN_CONFIG_CHMOD, $value[0], $value[1], substr(decoct(fileperms($value[0])),2));
                         $line .= "</span>\n";
@@ -278,10 +278,10 @@ class ModuleAdmin
     {
         $ret = "<table class=\"table table-stripped\">\n<tr>\n";
         $ret .= "<td width=\"auto\">\n";
-        $ret .= $this -> renderMenuIndex();
+        $ret .= $this->renderMenuIndex();
         $ret .= "</td>\n";
         $ret .= "<td width=\"auto\">\n";
-        $ret .= $this -> renderInfoBox();
+        $ret .= $this->renderInfoBox();
         $ret .= "</td>\n";
         $ret .= "</tr>\n";
         // If you use a config label
@@ -296,9 +296,9 @@ class ModuleAdmin
             $path = XOOPS_URL . "/Frameworks/moduleclasses/icons/16/";
             if ($this->_obj->getInfo('min_php')) {
                 if (version_compare(phpversion(), $this->_obj->getInfo('min_php'), '<')) {
-                    $ret .= "<span style='color : red; font-weight : bold;'><img src='" . $path . "0.png' >" . sprintf(_AM_MODULEADMIN_CONFIG_PHP, $this->_obj->getInfo('min_php'), phpversion()) . "</span>\n";
+                    $ret .= "<span class='red bold'><img src='" . $path . "0.png' >" . sprintf(_AM_MODULEADMIN_CONFIG_PHP, $this->_obj->getInfo('min_php'), phpversion()) . "</span>\n";
                 } else {
-                    $ret .= "<span style='color : green;'><img src='" . $path . "1.png' >" . sprintf(_AM_MODULEADMIN_CONFIG_PHP, $this->_obj->getInfo('min_php'), phpversion()) . "</span>\n";
+                    $ret .= "<span class='green'><img src='" . $path . "1.png' >" . sprintf(_AM_MODULEADMIN_CONFIG_PHP, $this->_obj->getInfo('min_php'), phpversion()) . "</span>\n";
                 }
                 $ret .= "<br />";
             }
@@ -341,18 +341,18 @@ class ModuleAdmin
                     }
                 }
                 if ($reqVer > $curVer) {
-                    $ret .= "<span style='color : red; font-weight : bold;'><img src='" . $path . "0.png' >" . sprintf(XOOPS_DB_TYPE.' '._AM_MODULEADMIN_CONFIG_DB, $dbRequiredVersion, $dbCurrentVersion) . "</span><br />\n";
+                    $ret .= "<span class='red bold'><img src='" . $path . "0.png' >" . sprintf(XOOPS_DB_TYPE.' '._AM_MODULEADMIN_CONFIG_DB, $dbRequiredVersion, $dbCurrentVersion) . "</span><br />\n";
                 } else {
-                    $ret .= "<span style='color : green;'><img src='" . $path . "1.png' >" . sprintf(strtoupper(XOOPS_DB_TYPE).' '._AM_MODULEADMIN_CONFIG_DB, $dbRequiredVersion, $dbCurrentVersion) . "</span><br />\n";
+                    $ret .= "<span class='green'><img src='" . $path . "1.png' >" . sprintf(strtoupper(XOOPS_DB_TYPE).' '._AM_MODULEADMIN_CONFIG_DB, $dbRequiredVersion, $dbCurrentVersion) . "</span><br />\n";
                 }
             }
 
             // xoops version
             if ($this->_obj->getInfo('min_xoops')) {
                 if (substr(XOOPS_VERSION, 6, strlen(XOOPS_VERSION)-6) < $this->_obj->getInfo('min_xoops')) {
-                    $ret .= "<span style='color : red; font-weight : bold;'><img src='" . $path . "0.png' >" . sprintf(_AM_MODULEADMIN_CONFIG_XOOPS, $this->_obj->getInfo('min_xoops'), substr(XOOPS_VERSION, 6, strlen(XOOPS_VERSION)-6)) . "</span>\n";
+                    $ret .= "<span class='red bold'><img src='" . $path . "0.png' >" . sprintf(_AM_MODULEADMIN_CONFIG_XOOPS, $this->_obj->getInfo('min_xoops'), substr(XOOPS_VERSION, 6, strlen(XOOPS_VERSION)-6)) . "</span>\n";
                 } else {
-                    $ret .= "<span style='color : green;'><img src='" . $path . "1.png' >" . sprintf(_AM_MODULEADMIN_CONFIG_XOOPS, $this->_obj->getInfo('min_xoops'), substr(XOOPS_VERSION, 6, strlen(XOOPS_VERSION)-6)) . "</span>\n";
+                    $ret .= "<span class='green'><img src='" . $path . "1.png' >" . sprintf(_AM_MODULEADMIN_CONFIG_XOOPS, $this->_obj->getInfo('min_xoops'), substr(XOOPS_VERSION, 6, strlen(XOOPS_VERSION)-6)) . "</span>\n";
                 }
                 $ret .= "<br />";
             }
@@ -360,9 +360,9 @@ class ModuleAdmin
             // ModuleAdmin version
             if ($this->_obj->getInfo('min_admin')) {
                 if ($this->getVersion() < $this->_obj->getInfo('min_admin')) {
-                    $ret .= "<span style='color : red; font-weight : bold;'><img src='" . $path . "0.png' >" . sprintf(_AM_MODULEADMIN_CONFIG_ADMIN, $this->_obj->getInfo('min_admin'), $this->getVersion()) . "</span>\n";
+                    $ret .= "<span class='red bold'><img src='" . $path . "0.png' >" . sprintf(_AM_MODULEADMIN_CONFIG_ADMIN, $this->_obj->getInfo('min_admin'), $this->getVersion()) . "</span>\n";
                 } else {
-                    $ret .= "<span style='color : green;'><img src='" . $path . "1.png' >" . sprintf(_AM_MODULEADMIN_CONFIG_ADMIN, $this->_obj->getInfo('min_admin'), $this->getVersion()) . "</span>\n";
+                    $ret .= "<span class='green'><img src='" . $path . "1.png' >" . sprintf(_AM_MODULEADMIN_CONFIG_ADMIN, $this->_obj->getInfo('min_admin'), $this->getVersion()) . "</span>\n";
                 }
                 $ret .= "<br />";
             }
@@ -567,7 +567,7 @@ class ModuleAdmin
         foreach (array_keys( $this->_obj->adminmenu) as $i) {
             if ($this->_obj->adminmenu[$i]['link'] == "admin/" . $menu) {
                 $navigation .= $this->_obj->adminmenu[$i]['title'] . " | ";
-                $ret = "<div class=\"CPbigTitle\" style=\"background-image: url(" . $path . $this->_obj->adminmenu[$i]['icon'] . "); background-repeat: no-repeat; background-position: left; padding-left: 50px;\">
+                $ret = "<div class=\"CPbigTitle\" style=\"background-image: url(" . $path . $this->_obj->adminmenu[$i]['icon'] . "); background-repeat: no-repeat; background-position: left; padding: 20px 1px 20px 50px;\">
         <strong>" . $this->_obj->adminmenu[$i]['title'] . "</strong></div><br />";
             } else {
                 $navigation .= "<a href = '../" . $this->_obj->adminmenu[$i]['link'] . "'>" . $this->_obj->adminmenu[$i]['title'] . "</a> | ";
@@ -577,7 +577,6 @@ class ModuleAdmin
             $navigation .= "<a href = '../../system/admin.php?fct=preferences&op=showmod&mod=" . $this->_obj->getVar('mid') . "'>" . _MI_SYSTEM_ADMENU6 . "</a>";
             $ret = $navigation . "<br /><br />" . $ret;
         }
-
         return $ret;
     }
 }

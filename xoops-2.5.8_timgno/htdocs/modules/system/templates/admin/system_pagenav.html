@@ -1,6 +1,6 @@
 <{if $pagination_nav}>
-<div class="pull-right">
-    <ul class="pagination">
+<div class="<{$align}>">
+    <ul class="pagination<{$size}>">
         <{if $prev_text}>
         <li class="previous"><a href="<{$prev_url}>"><{$prev_text}></a></li>
         <{/if}>
@@ -26,7 +26,7 @@
 </div>
 <{/if}>
 <{if $pagination_select}>
-<div class="pull-right">
+<div class="<{$align}>">
     <form class="form-inline" action="" name="pagenavform">
         <{if $showbutton == 1}>
         <div class="input-append">

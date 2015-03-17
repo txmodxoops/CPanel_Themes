@@ -1,7 +1,13 @@
-<table class="table table-striped">    
+<table class="table table-striped table-bordered table-hover">    
 	<thead>
 		<tr>
-			<th colspan="4"><{$smarty.const._OXYGEN_INSTALLEDMODULES}></th>
+			<h4 colspan="4"><{$smarty.const._OXYGEN_INSTALLEDMODULES}></h4>
+		</tr>
+		<tr>
+			<th class="text-center"><{$smarty.const._OXYGEN_INSTALLEDMODULES_NUM}></th>
+			<th class="text-center"><{$smarty.const._OXYGEN_INSTALLEDMODULES_IMAGE}></th>
+			<th class="text-center"><{$smarty.const._OXYGEN_INSTALLEDMODULES_NAME}></th>
+			<th class="text-center"><{$smarty.const._OXYGEN_INSTALLEDMODULES_DESCRIPTION}></th>
 		</tr>
 	</thead>
 	<tbody>
@@ -18,4 +24,11 @@
 		</tr>
 		<{/foreach}>
 	</tbody>
+	<{if $pagenav}>
+	<tfoot>
+		<tr>	
+			<td colspan="4">&nbsp; <{$pagenav}></td>			
+		</tr>
+	</tfoot>
+	<{/if}>
 </table>

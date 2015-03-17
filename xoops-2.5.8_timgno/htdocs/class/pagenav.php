@@ -157,7 +157,7 @@ class XoopsPageNav
             $size = ' pagination-' . $size;
         }
         $xoopsTpl->assign('size', $size);
-        $xoopsTpl->assign('align', ' pagination-' . $align);
+        $xoopsTpl->assign('align', ' pull-' . $align);
         $xoopsTpl->assign('pagination_nav', true);
         $ret = $xoopsTpl->fetch('db:system_pagenav.html');
         $xoopsTpl->clear_assign('xo_nav');
