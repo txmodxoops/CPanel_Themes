@@ -74,7 +74,7 @@ class XoopsGuiBootNewage extends XoopsSystemGui
         $xoTheme->addStylesheet(XOOPS_ADMINTHEME_URL . '/bootnewage/assets/css/yellow.css', array('title' => 'yellow', 'media' => 'screen'));
         $xoTheme->addStylesheet(XOOPS_ADMINTHEME_URL . '/bootnewage/assets/css/blue.css', array('title' => 'blue', 'media' => 'screen'));
         		
-        $xoTheme->addScript('browse.php?Frameworks/jquery/jquery.js');
+        $xoTheme->addScript('browse.php?Frameworks/jquery/jquery.min.js');
 		$xoTheme->addScript('browse.php?Frameworks/jquery/plugins/jquery.ui.js');
 		$xoTheme->addScript(XOOPS_ADMINTHEME_URL . '/bootnewage/assets/js/bootstrap.min.js');
         $xoTheme->addScript(XOOPS_ADMINTHEME_URL . '/bootnewage/assets/js/bootnewage.js');

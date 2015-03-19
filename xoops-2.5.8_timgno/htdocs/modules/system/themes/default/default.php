@@ -14,7 +14,7 @@ xoops_load('gui', 'system');
 /*
  * Xoops Cpanel default GUI class
  *
- * @copyright   The XOOPS project http://sf.net/projects/xoops/
+ * @copyright       (c) 2000-2014 XOOPS Project (www.xoops.org)
  * @license     http://www.fsf.org/copyleft/gpl.html GNU public license
  * @package     system
  * @usbpackage  GUI
@@ -25,7 +25,7 @@ xoops_load('gui', 'system');
  * @author      BitC3R0     <BitC3R0@gmail.com>
  * @author      trabis      <lusopoemas@gmail.com>
  * @version     1.2
- * @version     $Id: default.php 12360 2014-03-08 09:46:59Z beckmi $
+ * @version     $Id: default.php 12852 2014-11-17 03:34:31Z rgriffith $
  */
 
 /**
@@ -61,10 +61,7 @@ class XoopsGuiDefault extends XoopsSystemGui
         global $xoopsConfig, $xoopsUser, $xoopsModule, $xoTheme, $xoopsTpl;
         $tpl =& $this->template;
 
-        $xoTheme->addScript('browse.php?Frameworks/jquery/jquery.min.js');
-		//
-		$xoTheme->addScript('browse.php?Frameworks/jquery/plugins/jquery.ui.min.js');
-		//
+        $xoTheme->addScript('browse.php?Frameworks/jquery/jquery.js');
         $xoTheme->addScript(XOOPS_ADMINTHEME_URL . '/default/assets/js/styleswitch.js');
         $xoTheme->addScript(XOOPS_ADMINTHEME_URL . '/default/assets/js/formenu.js');
         $xoTheme->addScript(XOOPS_ADMINTHEME_URL . '/default/assets/js/menu.js');
@@ -116,7 +113,7 @@ class XoopsGuiDefault extends XoopsSystemGui
         $tpl->append('navitems', array('link' => XOOPS_URL . '/admin.php', 'text' => _CPHOME, 'menu' => $menu));
 
         //add SYSTEM  Menu items
-        include dirname(__FILE__) . '/menu.php';
+        include __DIR__ . '/menu.php';
         if (empty($xoopsModule) || 'system' == $xoopsModule->getVar('dirname', 'n')) {
             $modpath = XOOPS_URL . '/admin.php';
             $modname = _OXYGEN_SYSOPTIONS;
@@ -169,7 +166,7 @@ class XoopsGuiDefault extends XoopsSystemGui
                 } else {
                     $rtn['link'] = XOOPS_URL . '/modules/system/admin.php?fct=preferences&amp;op=showmod&amp;mod=' . $mod->getVar('mid');
                 }
-                $rtn['title'] = $mod->name();
+                $rtn['title'] = htmlspecialchars($mod->name(), ENT_QUOTES);
                 $rtn['absolute'] = 1;
                 $rtn['url'] = XOOPS_URL . '/modules/'. $mod->getVar('dirname', 'n') . '/'; //add for sub menus
                 $modOptions = $mod->getAdminMenu();                                        //add for sub menus
@@ -242,7 +239,7 @@ class XoopsGuiDefault extends XoopsSystemGui
             $sadmin = $moduleperm_handler->checkRight('module_admin', $mod->getVar('mid'), $xoopsUser->getGroups());
             if ($sadmin && ($mod->getVar('hasnotification') || is_array($mod->getInfo('config')) || is_array($mod->getInfo('comments')))) {
                 $rtn['link'] = XOOPS_URL . '/modules/system/admin.php?fct=preferences&amp;op=showmod&amp;mod=' . $mod->getVar('mid');
-                $rtn['title'] = $mod->name();
+                $rtn['title'] = htmlspecialchars($mod->name(), ENT_QUOTES);
                 $rtn['absolute'] = 1;
                 $rtn['icon'] = XOOPS_ADMINTHEME_URL . '/gui/oxygen/icons/prefs_small.png';
                 $menu[] = $rtn;
@@ -260,17 +257,17 @@ class XoopsGuiDefault extends XoopsSystemGui
             'link'      => 'http://xoops.org',
             'title'     => _OXYGEN_WEBSITE,
             'absolute'  => 1,
-            'icon'     => XOOPS_ADMINTHEME_URL . '/default/assets/img/xoops.png');
+            'icon'     => XOOPS_ADMINTHEME_URL . '/default/assets/images/xoops.png');
         $menu[] = array(
             'link'      => 'http://www.xoops.org/modules/repository/',
             'title'     => _OXYGEN_XOOPSMODULES,
             'absolute'  => 1,
-            'icon'     => XOOPS_ADMINTHEME_URL . '/default/assets/img/xoops.png');
+            'icon'     => XOOPS_ADMINTHEME_URL . '/default/assets/images/xoops.png');
         $menu[] = array(
             'link'      => 'http://www.xoops.org/modules/extgallery/',
             'title'     => _OXYGEN_XOOPSTHEMES,
             'absolute'  => 1,
-            'icon'     => XOOPS_ADMINTHEME_URL . '/default/assets/img/tweb.png');
+            'icon'     => XOOPS_ADMINTHEME_URL . '/default/assets/images/tweb.png');
 
         $tpl->append('navitems', array('link' => XOOPS_URL . '/admin.php','text' => _OXYGEN_INTERESTSITES, 'menu' => $menu));
 
@@ -301,7 +298,7 @@ class XoopsGuiDefault extends XoopsSystemGui
                 } else {
                     $rtn ['link'] = XOOPS_URL . '/modules/system/admin.php?fct=preferences&amp;op=showmod&amp;mod=' . $mod->getVar ( 'mid' );
                 }
-                $rtn ['title'] = $mod->getVar ('name');
+                $rtn ['title'] = htmlspecialchars($mod->getVar ('name'), ENT_QUOTES);
                 $rtn ['description'] = $mod->getInfo('description');
                 $rtn ['absolute'] = 1;
                 if (isset ( $info ['icon_big'] )) {
@@ -309,10 +306,8 @@ class XoopsGuiDefault extends XoopsSystemGui
                 } elseif (isset ( $info ['image'] )) {
                     $rtn ['icon'] = XOOPS_URL . '/modules/' . $mod->getVar ( 'dirname', 'n' ) . '/' . $info ['image'];
                 }
-
                 $tpl->append ( 'modules', $rtn );
             }
-
         }
     }
 }

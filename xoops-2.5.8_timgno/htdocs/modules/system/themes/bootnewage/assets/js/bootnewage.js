@@ -1,7 +1,8 @@
-
-
-
-
+/*
+ * Script for CPanel bootnewage admin theme
+ *
+ * Author Txmod Xoops http://www.txmodxoops.org
+ */
 $(document).ready(function(e) {	
 	$('ul#tabNav').on('shown', function(e) {
 		e.preventDefault();
@@ -27,17 +28,21 @@ $(document).ready(function(e) {
 		// setup ul.nav.nav-tabs to work as nav-tabs for each div directly under div.panes
 		$("ul.nav.nav-tabs").tabs("div.panes > div");
 	});
-	
-	$('button#xo-addcat-btn').on('click', function(e) {
-		e.preventDefault();
-		$("div#xo-category-add").toggle();
-	});
-	
-	$('button#xo-addimg-btn').on('click', function(e) {
-		e.preventDefault();
-		$("div#xo-images-add").toggle();
-	});
-		
+	// Script to show and hide categories and images form of the section system image manager
+	$(function() {
+		$('div#xo-category-add').hide();
+		$('button#xo-addcat-btn').on('click', function(e) {
+			e.preventDefault();
+			$("div#xo-category-add").toggle();
+			$("div#xo-images-add").hide();
+		});
+		$('div#xo-images-add').hide();
+		$('button#xo-addimg-btn').on('click', function(e) {
+			e.preventDefault();
+			$("div#xo-images-add").toggle();
+			$("div#xo-category-add").hide();
+		});
+	});	
 	$(function () {	
 		//Load Accordion
 		$("#accordion > h5").bind("click", function(){

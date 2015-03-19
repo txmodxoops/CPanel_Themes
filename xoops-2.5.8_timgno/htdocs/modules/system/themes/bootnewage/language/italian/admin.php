@@ -2,6 +2,10 @@
 // $Id: admin.php 12609 2014-06-16 06:30:00Z beckmi $
 define('_OXYGEN_SYSOPTIONS',"System Options");
 define('_OXYGEN_INSTALLEDMODULES',"Installed Modules");
+define('_OXYGEN_INSTALLEDMODULES_NUM',"N°");
+define('_OXYGEN_INSTALLEDMODULES_IMAGE',"Image");
+define('_OXYGEN_INSTALLEDMODULES_NAME',"Name");
+define('_OXYGEN_INSTALLEDMODULES_DESCRIPTION',"Description");
 define('_OXYGEN_XOOPSTHEMES',"XOOPS Themes");
 define('_OXYGEN_XOOPSMODULES',"XOOPS Modules");
 define('_OXYGEN_INTERESTSITES',"Links");
@@ -37,9 +41,14 @@ define('_OXYGEN_MAILER',"Email Setup");
 define('_OXYGEN_AUTHENTICATION',"Authentication Options");
 define('_OXYGEN_MODULESETTINGS',"System Module Settings");
 //Add for styles name
-define('_OXYGEN_SILVER',"Silver");
+define('_OXYGEN_THEME_COLOR',"Theme Color");
 define('_OXYGEN_DARK',"Dark");
+define('_OXYGEN_SILVER',"Silver");
 define('_OXYGEN_ORANGE',"Orange");
+define('_OXYGEN_RED',"Red");
+define('_OXYGEN_GREEN',"Green");
+define('_OXYGEN_YELLOW',"Yellow");
+define('_OXYGEN_BLUE',"Blue");
 //Add 10 des
 define('_OXYGEN_XOOPS_LICENSE',"XOOPS License");
 define('_OXYGEN_RSS',"RSS Feed");

@@ -12,7 +12,7 @@
 /*
  * Xoops Cpanel oxygen menu
  *
- * @copyright   The XOOPS project http://sf.net/projects/xoops/
+ * @copyright       (c) 2000-2014 XOOPS Project (www.xoops.org)
  * @license     http://www.fsf.org/copyleft/gpl.html GNU public license
  * @package     system
  * @usbpackage  GUI
@@ -23,7 +23,7 @@
  * @author      BitC3R0     <BitC3R0@gmail.com>
  * @author      trabis      <lusopoemas@gmail.com>
  * @version     1.2
- * @version     $Id: menu.php 12033 2013-09-14 03:16:44Z beckmi $
+ * @version     $Id: menu.php 12795 2014-09-21 05:41:46Z beckmi $
  */
 
 $groups = $GLOBALS['xoopsUser']->getGroups();
@@ -57,6 +57,6 @@ foreach($dirlist as $file){
         }
         unset($modversion);
     }
-    $index++;
+    ++$index;
 }
 unset($dirlist);

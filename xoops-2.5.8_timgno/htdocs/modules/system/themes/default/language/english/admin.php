@@ -1,5 +1,5 @@
 <?php
-// $Id: admin.php 12033 2013-09-14 03:16:44Z beckmi $
+// $Id: admin.php 12609 2014-06-16 06:30:00Z beckmi $
 define('_OXYGEN_SYSOPTIONS',"System Options");
 define('_OXYGEN_INSTALLEDMODULES',"Installed Modules");
 define('_OXYGEN_XOOPSTHEMES',"XOOPS Themes");
@@ -46,8 +46,8 @@ define('_OXYGEN_RSS',"RSS Feed");
 define('_OXYGEN_ADMINISTRATION',"XOOPS Administration");
 define('_OXYGEN_UPTOP',"Up Top");
 //Add help
-define('_OXYGEN_HELP_1',"How can I make content ?");
-define('_OXYGEN_HELP_DESC_1','To make content you must first install some module, like the <a href="http://xoops.svn.sourceforge.net/viewvc/xoops/XoopsModules/fmcontent/trunk/?view=tar" rel="external">fmContent</a> or the <a href="https://sourceforge.net/projects/xoops/files/XOOPS%20Module%20Repository/XOOPS2/Content/XOOPS2.5_mod_content_1.4_kerkyra.zip/download" rel="external">Content</a> module. To learn more about modules <a href="modules/system/help.php?mid=1&page=modulesadmin">click here</a>' );
+define('_OXYGEN_HELP_1',"How can I create content with XOOPS?");
+define('_OXYGEN_HELP_DESC_1','To create content, you must first install a content module, like the <a href="https://sourceforge.net/p/xoops/svn/HEAD/tree/XoopsModules/publisher/trunk/" rel="external">Publisher</a> or the <a href="https://sourceforge.net/p/xoops/svn/HEAD/tree/XoopsModules/news/trunk/" rel="external">News</a> module. To learn more about XOOPS modules <a href="modules/system/help.php?mid=1&page=modulesadmin">click here</a>' );
 define('_OXYGEN_HELP_2',"What is the Block?");
 define('_OXYGEN_HELP_DESC_2','Blocks can provide additional/specific content from the installed modules. There can be and custom blocks which can contain text, JS Code, HTML formatted text, pictures, etc. The content in these blocks may be formatted individually or can inherit formatting from the Website. (<a href="modules/system/help.php?mid=1&page=blocksadmin">more ...</a>)');
 define('_OXYGEN_HELP_3',"How I can find more help?");

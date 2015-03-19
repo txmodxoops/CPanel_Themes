@@ -16,9 +16,14 @@
 @import url(tabs.css);
 
 /* ==================== General definitions ==================== */
-html { }
+html {
+    width: 100%;
+    height: 100%;
+}
 
 body {
+	width: 100%;
+    height: 100%;
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -168,4 +173,10 @@ li.bg-color.bg-blue a {
 
 .row.row-preferences {
 	margin: 20px 0 0 10px;
+}
+
+@media(max-width:767px) {    	
+	.sidenav {
+        margin-top: -20px;		
+    }
 }
