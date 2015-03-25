@@ -111,7 +111,6 @@ footer {
 	border-left-color:#cccccc;
 	margin-top:5px;
 	margin-right:-10px;
-	overflow: auto;
 }
 
 .dropdown-submenu:hover>a.submenu-after:after {

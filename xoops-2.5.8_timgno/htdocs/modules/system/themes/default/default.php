@@ -61,17 +61,20 @@ class XoopsGuiDefault extends XoopsSystemGui
         global $xoopsConfig, $xoopsUser, $xoopsModule, $xoTheme, $xoopsTpl;
         $tpl =& $this->template;
 
-        $xoTheme->addScript('browse.php?Frameworks/jquery/jquery.js');
-        $xoTheme->addScript(XOOPS_ADMINTHEME_URL . '/default/assets/js/styleswitch.js');
-        $xoTheme->addScript(XOOPS_ADMINTHEME_URL . '/default/assets/js/formenu.js');
-        $xoTheme->addScript(XOOPS_ADMINTHEME_URL . '/default/assets/js/menu.js');
-        $xoTheme->addScript(XOOPS_ADMINTHEME_URL . '/default/assets/js/tooltip.js');
-        $xoTheme->addScript(XOOPS_ADMINTHEME_URL . '/default/assets/js/tabs.jquery.tools.min.js');
-
-        $xoTheme->addStylesheet(XOOPS_ADMINTHEME_URL . '/default/assets/css/style.css' );
+        $xoTheme->addStylesheet(XOOPS_URL . '/modules/system/css/ui/' . xoops_getModuleOption('jquery_theme', 'system') . '/ui.all.css');
+        $xoTheme->addStylesheet(XOOPS_ADMINTHEME_URL . '/default/assets/css/bootstrap.min.css', array('media' => 'screen'));
+		$xoTheme->addStylesheet(XOOPS_ADMINTHEME_URL . '/default/assets/css/style.css' );
         $xoTheme->addStylesheet(XOOPS_ADMINTHEME_URL . '/default/assets/css/dark.css', array('title' => 'dark', 'media' => 'screen'));
         $xoTheme->addStylesheet(XOOPS_ADMINTHEME_URL . '/default/assets/css/silver.css', array('title' => 'silver', 'media' => 'screen'));
         $xoTheme->addStylesheet(XOOPS_ADMINTHEME_URL . '/default/assets/css/orange.css', array('title' => 'orange', 'media' => 'screen'));
+		
+		$xoTheme->addScript('browse.php?Frameworks/jquery/jquery.min.js');
+        $xoTheme->addScript(XOOPS_ADMINTHEME_URL . '/default/assets/js/bootstrap.min.js');
+		$xoTheme->addScript(XOOPS_ADMINTHEME_URL . '/default/assets/js/styleswitch.js');
+        $xoTheme->addScript(XOOPS_ADMINTHEME_URL . '/default/assets/js/formenu.js');
+        $xoTheme->addScript(XOOPS_ADMINTHEME_URL . '/default/assets/js/menu.js');
+        $xoTheme->addScript(XOOPS_ADMINTHEME_URL . '/default/assets/js/tooltip.js');
+        $xoTheme->addScript(XOOPS_ADMINTHEME_URL . '/default/assets/js/tabs.jquery.tools.min.js');        
 
         $tpl->assign('lang_cp', _CPHOME);
         //start system overview

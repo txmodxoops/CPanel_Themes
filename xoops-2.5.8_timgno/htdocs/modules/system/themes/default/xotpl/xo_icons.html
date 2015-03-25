@@ -3,16 +3,16 @@
 <div id="xo-system-icons">
     <div id="xo-icon">
         <{foreach item=op from=$mod_options}>
-        <a class="tooltip" href="<{$op.link}>" title="<{$op.desc}>">
+        <a href="<{$op.link}>" data-toggle="tooltip" data-original-title="<{$op.desc}>" title="<{$op.desc}>">
             <img src='<{$op.icon|default:"$theme_icons/icon_options.png"}>' alt="<{$op.desc}>" />
             <br /><span><{$op.title}></span>
         </a>
         <{/foreach}>
-        <a class="tooltip" href="<{xoAppUrl modules/system/admin.php}>" title="<{$smarty.const._AM_SYSTEM_CONFIG}>">
+        <a href="<{xoAppUrl modules/system/admin.php}>" data-toggle="tooltip" data-original-title="<{$smarty.const._AM_SYSTEM_CONFIG}>" title="<{$smarty.const._AM_SYSTEM_CONFIG}>">
             <img src='<{"$theme_icons/configuration.png"}>' />
             <span><{$smarty.const._AM_SYSTEM_CONFIG}></span>
         </a>
-        <a class="tooltip" href="<{xoAppUrl modules/system/help.php}>" title="<{$smarty.const._AM_SYSTEM_HELP}>">
+        <a href="<{xoAppUrl modules/system/help.php}>" data-toggle="tooltip" data-original-title="<{$smarty.const._AM_SYSTEM_HELP}>" title="<{$smarty.const._AM_SYSTEM_HELP}>">
             <img src='<{"$theme_icons/help.png"}>' />
             <span><{$smarty.const._AM_SYSTEM_HELP}></span>
         </a>
