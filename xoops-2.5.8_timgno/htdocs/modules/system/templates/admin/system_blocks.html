@@ -107,10 +107,11 @@
 		</tbody>
     </table>
 </div>
-<{/if}>
+<{else}>
 <div class="form-inline" id="xo-block-add" <{if $filterform}>class="hide"<{/if}>>
     <{if !$filterform}><br /><{/if}>
     <{$blockform}>
 </div>
 <!-- Preview block -->
 <div id="xo-preview-block" class="hide"></div>
+<{/if}>

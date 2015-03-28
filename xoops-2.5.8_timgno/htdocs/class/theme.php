@@ -280,11 +280,11 @@ class xos_opal_Theme
             'xoops_dirname' => isset($GLOBALS['xoopsModule'])&& is_object($GLOBALS['xoopsModule']) ? $GLOBALS['xoopsModule']->getVar('dirname') : 'system',
             'xoops_banner' => ($GLOBALS['xoopsConfig']['banners'] && $this->renderBanner) ? xoops_getbanner() : '&nbsp;',
             'xoops_pagetitle' => isset($GLOBALS['xoopsModule']) && is_object($GLOBALS['xoopsModule']) ? $GLOBALS['xoopsModule']->getVar('name') : htmlspecialchars($GLOBALS['xoopsConfig']['slogan'], ENT_QUOTES)));
-		// From XoopsCore by Timgno
+		// From XoopsCore by Timgno - Added '/assets/' folder
 		$this->template->assign(array(
             'theme_path' => $this->path, 'theme_tpl' => $this->path . '/xotpl', 'theme_url' => $this->url,
-            'theme_img'  => $this->url . '/img', 'theme_icons' => $this->url . '/icons',
-            'theme_css'  => $this->url . '/css', 'theme_js' => $this->url . '/js',
+            'theme_img'  => $this->url . '/assets/img', 'theme_icons' => $this->url . '/assets/icons',
+            'theme_css'  => $this->url . '/assets/css', 'theme_js' => $this->url . '/assets/js',
             'theme_lang' => $this->url . '/language',
         ));
 		// --------------------------------------------------------------------
@@ -405,7 +405,6 @@ class xos_opal_Theme
                 return true;
             }
         }
-
         return false;
     }
 

@@ -5,8 +5,10 @@
     IMG_OFF = '<{xoAdminIcons cancel.png}>';
 </script>
 <div class="pull-left">
-    <img class="cursorpointer" onclick="system_moduleLargeView();" src="<{xoAdminIcons view_large.png}>" alt="<{$smarty.const._AM_SYSTEM_MODULES_VIEWLARGE}>" title="<{$smarty.const._AM_SYSTEM_MODULES_VIEWLARGE}>" />
-    <img class="cursorpointer" onclick="system_moduleListView();" src="<{xoAdminIcons view_small.png}>" alt="<{$smarty.const._AM_SYSTEM_MODULES_VIEWLINE}>" title="<{$smarty.const._AM_SYSTEM_MODULES_VIEWLINE}>" />
+    <button class="btn btn-default cursorpointer" onclick="system_moduleLargeView();" title="<{$smarty.const._AM_SYSTEM_MODULES_VIEWLARGE}>"><i class="glyphicon glyphicon-th-large"></i></button>
+	<!-- <img class="cursorpointer" src="<{xoAdminIcons view_large.png}>" onclick="system_moduleLargeView();" alt="<{$smarty.const._AM_SYSTEM_MODULES_VIEWLARGE}>" title="<{$smarty.const._AM_SYSTEM_MODULES_VIEWLARGE}>" /> -->
+    <button class="btn btn-default cursorpointer" onclick="system_moduleListView();" title="<{$smarty.const._AM_SYSTEM_MODULES_VIEWLARGE}>"><i class="glyphicon glyphicon-th-list"></i></button>
+	<!-- <img class="cursorpointer" onclick="system_moduleListView();" src="<{xoAdminIcons view_small.png}>" alt="<{$smarty.const._AM_SYSTEM_MODULES_VIEWLINE}>" title="<{$smarty.const._AM_SYSTEM_MODULES_VIEWLINE}>" /> -->
 </div>
 <div class="pull-right">
     <div class="xo-buttons">
@@ -99,7 +101,7 @@
                 </td>
                 <td>
                     <{if $row.warning_update == 1}>
-                        <a class="tooltip maxi" style="color:red;" href="<{$xoops_url}>/modules/system/admin.php?fct=modulesadmin&amp;op=update&amp;module=<{$row.dirname}>" title="<{$smarty.const._AM_SYSTEM_MODULES_UPDATE}>"><{$row.version}></a><br /><{$smarty.const._AM_SYSTEM_MODULES_UPDATE}>
+                        <a class="maxi" style="color:red;" href="<{$xoops_url}>/modules/system/admin.php?fct=modulesadmin&amp;op=update&amp;module=<{$row.dirname}>" title="<{$smarty.const._AM_SYSTEM_MODULES_UPDATE}>"><{$row.version}></a><br /><{$smarty.const._AM_SYSTEM_MODULES_UPDATE}>
                     <{else}>
                         <{$row.version}> <{$row.module_status}>
                     <{/if}>
@@ -152,7 +154,7 @@
                 </td>
                 <td>
                     <{if $row.warning_update == 1}>
-                        <a class="tooltip maxi" style="color:red;" href="<{$xoops_url}>/modules/system/admin.php?fct=modulesadmin&amp;op=update&amp;module=<{$row.dirname}>" title="<{$smarty.const._AM_SYSTEM_MODULES_UPDATE}>"><{$row.version}></a><br /><{$smarty.const._AM_SYSTEM_MODULES_UPDATE}>
+                        <a class="maxi" style="color:red;" href="<{$xoops_url}>/modules/system/admin.php?fct=modulesadmin&amp;op=update&amp;module=<{$row.dirname}>" title="<{$smarty.const._AM_SYSTEM_MODULES_UPDATE}>"><{$row.version}></a><br /><{$smarty.const._AM_SYSTEM_MODULES_UPDATE}>
                     <{else}>
                         <{$row.version}> <{$row.module_status}>
                     <{/if}>
@@ -193,8 +195,10 @@
 
 <{if $toinstall_mods}>
 <div class="pull-left">
-    <img class="cursorpointer" onclick="system_moduleLargeView();" src="<{xoAdminIcons view_large.png}>" alt="<{$smarty.const._AM_SYSTEM_MODULES_VIEWLARGE}>" title="<{$smarty.const._AM_SYSTEM_MODULES_VIEWLARGE}>" />
-    <img class="cursorpointer" onclick="system_moduleListView();" src="<{xoAdminIcons view_small.png}>" alt="<{$smarty.const._AM_SYSTEM_MODULES_VIEWLINE}>" title="<{$smarty.const._AM_SYSTEM_MODULES_VIEWLINE}>" />
+    <button class="btn btn-default cursorpointer" onclick="system_moduleLargeView();" title="<{$smarty.const._AM_SYSTEM_MODULES_VIEWLARGE}>"><i class="glyphicon glyphicon-th-large"></i></button>
+	<!-- <img class="cursorpointer" src="<{xoAdminIcons view_large.png}>" onclick="system_moduleLargeView();" alt="<{$smarty.const._AM_SYSTEM_MODULES_VIEWLARGE}>" title="<{$smarty.const._AM_SYSTEM_MODULES_VIEWLARGE}>" /> -->
+    <button class="btn btn-default cursorpointer" onclick="system_moduleListView();" title="<{$smarty.const._AM_SYSTEM_MODULES_VIEWLARGE}>"><i class="glyphicon glyphicon-th-list"></i></button>
+	<!-- <img class="cursorpointer" onclick="system_moduleListView();" src="<{xoAdminIcons view_small.png}>" alt="<{$smarty.const._AM_SYSTEM_MODULES_VIEWLINE}>" title="<{$smarty.const._AM_SYSTEM_MODULES_VIEWLINE}>" /> -->
 </div>
 <div class="clear spacer"></div>
 <table class="table table-bordered">
@@ -223,8 +227,8 @@
             </td>
             <td><{$row.version}> <{$row.module_status}></td>
             <td class="xo-modsimages">
-                <a href="<{$xoops_url}>/modules/system/admin.php?fct=modulesadmin&amp;op=install&amp;module=<{$row.dirname}>" title="<{$smarty.const._AM_SYSTEM_MODULES_INSTALL}>">
-                    <img src="<{xoAdminIcons install.png}>" alt="<{$smarty.const._AM_SYSTEM_MODULES_INSTALL}>" />
+                <a href="<{$xoops_url}>/modules/system/admin.php?fct=modulesadmin&amp;op=install&amp;module=<{$row.dirname}>" title="<{$smarty.const._AM_SYSTEM_MODULES_INSTALL}>"><img src="<{xoAdminIcons install.png}>" alt="<{$smarty.const._AM_SYSTEM_MODULES_INSTALL}>" />
+                   <!--   <i class="glyphicon glyphicon-circle-arrow-up"></i> -->
                 </a>
                 <img class="cursorpointer" onclick="display_dialog(<{$row.mid}>, true, true, 'slide', 'slide', 240, 450);" src="<{xoAdminIcons info.png}>" alt="<{$smarty.const._INFO}>" title="<{$smarty.const._INFO}>" />
             </td>

@@ -12,7 +12,7 @@
 */
 #xo-logger-errors, #xo-logger-deprecated, #xo-logger-queries, #xo-logger-blocks,
 #xo-logger-extra, #xo-logger-timers{
-   max-width: 95% !important;
+	max-width: 96% !important;
 }
 #xo-logger-output {
     margin: 0 auto !important;
@@ -24,7 +24,7 @@
     margin-top: -2px;
     padding-left: 2%;
     padding-right: 2%;
-    width: 96% !important;
+    width: 100% !important;
 
 }
 #xo-logger-errors {}

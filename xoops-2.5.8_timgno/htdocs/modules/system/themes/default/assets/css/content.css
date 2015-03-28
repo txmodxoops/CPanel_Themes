@@ -206,13 +206,13 @@ a.fontSmall:hover {
 	text-decoration: underline;
 }
 
-/*=============== styles for tables =================*/
+/*=============== styles for tables =================*//*
 table {
 	margin: 0;
 	width: 100%;
 	border: none;
 	border-collapse: separate /*collapse*/;
-	border-spacing: 1px;
+	/*border-spacing: 1px;
 }
 
 th {
@@ -220,7 +220,7 @@ th {
 	color: #fff;
 	padding: 4px;
 	vertical-align: middle;
-}
+}*/
 
 .outer {
 	width: 99%;
@@ -255,7 +255,7 @@ th {
 	padding: 5px;
 	font-weight: bold;
 }
-
+/*
 tr.head td {
 	background-color: #BDE3FB;
 	padding: 5px;
@@ -280,7 +280,7 @@ tr.foot td {
 	font-weight: bold;
 }
 
-td.head {max-width: 300px !important;}
+td.head {max-width: 300px !important;}*/
 /*============= XOOPS Editors =============*/
 body.mceContentBody {
 	background-color: #fff;

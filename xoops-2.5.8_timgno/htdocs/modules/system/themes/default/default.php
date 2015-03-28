@@ -74,7 +74,8 @@ class XoopsGuiDefault extends XoopsSystemGui
         $xoTheme->addScript(XOOPS_ADMINTHEME_URL . '/default/assets/js/formenu.js');
         $xoTheme->addScript(XOOPS_ADMINTHEME_URL . '/default/assets/js/menu.js');
         $xoTheme->addScript(XOOPS_ADMINTHEME_URL . '/default/assets/js/tooltip.js');
-        $xoTheme->addScript(XOOPS_ADMINTHEME_URL . '/default/assets/js/tabs.jquery.tools.min.js');        
+        $xoTheme->addScript(XOOPS_ADMINTHEME_URL . '/default/assets/js/tabs.jquery.tools.min.js');   
+        $xoTheme->addScript(XOOPS_ADMINTHEME_URL . '/default/assets/js/default.js');		
 
         $tpl->assign('lang_cp', _CPHOME);
         //start system overview

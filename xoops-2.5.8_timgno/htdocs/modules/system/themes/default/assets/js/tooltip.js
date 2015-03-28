@@ -9,13 +9,13 @@
  */
  
 
-
-this.tooltip = function(){	
-    /* CONFIG */
-    yOffset = 20;
+/*
+this.tooltip = function(){	*/
+    /* CONFIG
+    yOffset = 20; */
 
     /* END CONFIG */		
-    $(".tooltip").hover(function(e){
+    /*$(".tooltip").hover(function(e){
         this.t = this.title;
         this.title = "";
         
@@ -55,9 +55,9 @@ this.tooltip = function(){
             .css("top",(e.pageY + yOffset) + "px")
             .css("left",(e.pageX + xOffset) + "px");
     });
-};
+};*/
 
 // starting the script on page load
 $(document).ready(function(){
-    tooltip();
+    $('[data-toggle="tooltip"]').tooltip({ track: true });
 });
