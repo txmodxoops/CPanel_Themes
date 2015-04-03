@@ -1,0 +1,153 @@
+		<!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top xo-img-repeat-head" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header col-xs-2">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+				<a href="<{xoAppUrl admin.php}>"><img src="<{xoImgUrl assets/img/logo.png}>" title="<{$smarty.const._OXYGEN_ADMINISTRATION}>" alt="<{$smarty.const._ADMIN}>"></a>
+				<!-- <div id="main-logo">
+					<a class="navbar-brand" href="<{xoAppUrl admin.php}>" title="<{$smarty.const._OXYGEN_ADMINISTRATION}>"></a>
+				</div> -->
+            </div>
+			<!-- Top Dropdown Menu Items Main Navigation -->
+			<div class="dropdown col-xs-5 col-md-5">
+				<ul id="menu" class="nav navbar-nav">
+					<{foreach item=item from=$navitems}>
+					<li class="dmenu">
+						<a href="<{$item.link}>" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown-menu"> <{$item.text}> <i class="fa fa-fw fa-angle-down"></i></a>
+						<ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdown-menu">
+							<{foreach item=sub from=$item.menu}>
+							<li tabindex="-1" class="dropdown-submenu">
+								<{if $sub.options != 0}>
+									<a class="submenu-after" tabindex="-1" href="<{$sub.link}>"> <{$sub.title}> </a>
+									<ul class="dropdown-menu">
+										<{foreach item=option from=$sub.options}>
+										<li><a href="<{$sub.url}><{$option.link}>"><{$option.title}></a></li>
+										<{/foreach}>
+									</ul>
+								<{else}>
+									<a href="<{$sub.link}>" title="<{$sub.title}>"><{$sub.title}></a>
+								<{/if}>
+							</li>
+							<{/foreach}>
+						</ul>
+					</li>
+					<{/foreach}>
+				</ul>				
+			</div>			
+            <!-- Top Menu Items -->
+            <ul class="nav navbar-right top-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
+                    <ul class="dropdown-menu message-dropdown">
+                        <li class="message-preview">
+                            <a href="#">
+                                <div class="media">
+                                    <span class="pull-left">
+                                        <img class="media-object" src="http://placehold.it/50/ffff00/000000" alt="">
+                                    </span>
+                                    <div class="media-body">
+                                        <h5 class="media-heading"><strong>John Smith</strong></h5>
+                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="message-preview">
+                            <a href="#">
+                                <div class="media">
+                                    <span class="pull-left">
+                                        <img class="media-object" src="http://placehold.it/50/ffff00/000000" alt="">
+                                    </span>
+                                    <div class="media-body">
+                                        <h5 class="media-heading"><strong>John Smith</strong>
+                                        </h5>
+                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="message-preview">
+                            <a href="#">
+                                <div class="media">
+                                    <span class="pull-left">
+                                        <img class="media-object" src="http://placehold.it/50/ffff00/000000" alt="">
+                                    </span>
+                                    <div class="media-body">
+                                        <h5 class="media-heading"><strong>John Smith</strong>
+                                        </h5>
+                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="message-footer">
+                            <a href="<{xoAppUrl modules/pm/admin/admin.php}>">Read All New Messages</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-globe"></i> <b class="caret"></b></a>
+                    <ul class="dropdown-menu alert-dropdown">
+                        <li><a href="#">Theme Name <span class="label label-default">Black</span></a></li>
+                        <li><a href="#">Theme Name <span class="label label-primary">Blue</span></a></li>
+                        <li><a href="#">Theme Name <span class="label label-success">Green</span></a></li>
+                        <li><a href="#">Theme Name <span class="label label-info">Sky</span></a></li>
+                        <li><a href="#">Theme Name <span class="label label-warning">Orange</span></a></li>
+                        <li><a href="#">Theme Name <span class="label label-danger">Red</span></a></li>                        
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <{$uname}> <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="<{xoAppUrl admin.php}>">Dashboard</a></li>            
+						<li><a href="<{xoAppUrl modules/profile/index.php}>">Profile</a></li>
+						<li><a href="<{xoAppUrl modules/system/admin.php?fct=preferences}>">Settings</a></li>
+						<li><a href="<{xoAppUrl modules/system/help.php}>">Help</a></li>
+						<li><a href="<{xoAppUrl}>"><img src="<{xoImgUrl assets/img/home.png}>" alt="<{$smarty.const._YOURHOME}>"></a></li>
+						<li><a href="<{xoAppUrl user.php?op=logout}>"><img src="<{xoImgUrl assets/img/logout.png}>" alt="<{$smarty.const._LOGOUT}>"></a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">                
+				<ul class="nav navbar-nav side-nav">
+                    <li class="active">
+                        <a href="<{xoAppUrl admin.php}>"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                    </li>					
+					<li>
+						<a href="#"><i class="fa fa-wrench fa-fw"></i> Control Panel<span class="fa arrow"></span></a>
+						<ul class="nav nav-second-level">
+							<li>
+								<a href="<{xoAppUrl /}>">Home Page</a>
+							</li>
+							<li>
+								<a href="<{xoAppUrl admin.php?xoopsorgnews=1}>">Xoops News</a>
+							</li>
+							<li>
+								<a href="<{xoAppUrl user.php?op=logout}>">Logout</a>
+							</li>							
+						</ul>
+						<!-- /.nav-second-level -->
+					</li>
+					<li>
+						<a href="<{xoAppUrl modules/system/admin.php?fct=modulesadmin}>"><i class="fa fa-sitemap fa-fw"></i> Modules</a>						
+					</li>
+					<li>
+                        <a href="<{xoAppUrl admin.php}>"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
+                    </li>
+				</ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>		
+		<script type="text/javascript">
+			var menu=new menu.dd("menu");
+			menu.init("menu","menuhover");
+		</script>

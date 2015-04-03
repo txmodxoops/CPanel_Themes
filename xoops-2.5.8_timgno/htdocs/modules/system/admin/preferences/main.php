@@ -42,13 +42,13 @@ $op = system_CleanVars ( $_REQUEST, 'op', 'default', 'string' );
 // Setting type
 $confcat_id = system_CleanVars ( $_REQUEST, 'confcat_id', 0, 'int' );
 // Define main template
-$xoopsOption['template_main'] = 'system_preferences.html';
+$xoopsOption['template_main'] = 'system_preferences.tpl';
 // Call Header
 xoops_cp_header();
 // Define Stylesheet
 $xoTheme->addStylesheet( XOOPS_URL . '/modules/system/css/admin.css');
 // Define scripts
-$xoTheme->addScript('browse.php?Frameworks/jquery/jquery.js');
+$xoTheme->addScript('browse.php?Frameworks/jquery/jquery.min.js');
 $xoTheme->addScript('modules/system/js/admin.js');
 
 $xoBreadCrumb->addLink( _AM_SYSTEM_PREFERENCES_NAV_MAIN, system_adminVersion('preferences', 'adminpath'));

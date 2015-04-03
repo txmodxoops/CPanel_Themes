@@ -1,0 +1,27 @@
+			<!-- Page Heading -->
+			<div class="row">
+				<div class="col-lg-12">
+					<h2 class="page-header">
+						<{$modname}>
+					</h2>
+					<ol class="breadcrumb">
+						<{foreach item=breadcrumb from=$xo_sys_breadcrumb}>
+							<{if $breadcrumb.home}>
+								<li><a href="<{$breadcrumb.link}>" title="<{$breadcrumb.title}>"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+							<{else}>
+								<{if $breadcrumb.link}>
+								<li><a href="<{$breadcrumb.link}>" title="<{$breadcrumb.title}>"><{$breadcrumb.title}></a></li>
+								<{else}>
+								<li class="active"><{$breadcrumb.title}></li>
+								<{/if}>
+							<{/if}>
+						<{/foreach}>						
+					</ol>
+					<{if $xo_sys_help}>
+						<span class="xo-help pull-right">
+							<a class="cursorhelp help_view" title="<{$smarty.const._AM_SYSTEM_HELP_VIEW}>"><i class="glyphicon glyphicon-menu-left"></i></a>
+							<a class="cursorhelp help_hide" title="<{$smarty.const._AM_SYSTEM_HELP_HIDE}>"><i class="glyphicon glyphicon-menu-down"></i></a>
+						</span>
+					<{/if}>
+				</div>
+			</div>

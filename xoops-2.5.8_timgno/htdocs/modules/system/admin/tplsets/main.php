@@ -36,11 +36,11 @@ if ( !is_object($GLOBALS['xoopsUser']) || !is_object($GLOBALS['xoopsModule']) ||
 $op = system_CleanVars ( $_REQUEST, 'op', 'default', 'string' );
 
 // Define main template
-$xoopsOption['template_main'] = 'system_templates.html';
+$xoopsOption['template_main'] = 'system_templates.tpl';
 // Call Header
 xoops_cp_header();
 // Define scripts
-$xoTheme->addScript('browse.php?Frameworks/jquery/jquery.js');
+$xoTheme->addScript('browse.php?Frameworks/jquery/jquery.min.js');
 $xoTheme->addScript('browse.php?Frameworks/jquery/plugins/jquery.ui.js');
 $xoTheme->addScript('modules/system/js/jquery.easing.js');
 $xoTheme->addScript('modules/system/js/jqueryFileTree.js');

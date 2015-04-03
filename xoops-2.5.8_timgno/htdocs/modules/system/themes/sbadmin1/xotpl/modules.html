@@ -1,0 +1,8 @@
+<div id="xo-module-icons">
+	<{foreach item=mod from=$modules}>
+	<a href="<{$mod.link}>" title="<{$mod.title}> - <{$mod.description}>">
+	<img src='<{$mod.icon|default:"$theme_img/modules.png"}>' alt="<{$mod.title}>" />
+	<!-- <span><{$mod.title}></span> -->
+	</a>
+	<{/foreach}>
+</div>

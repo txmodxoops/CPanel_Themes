@@ -1,0 +1,81 @@
+    <div id="page-wrapper">
+		<div class="container-fluid">
+			<{includeq file="$theme_tpl/header.html"}>
+			<!-- /.row -->		
+			<{if $xoops_contents}>
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="panel panel-default">						
+						<div class="panel-body">                                
+							<div id="xo-content">
+							<!-- Display Admin menu -->
+							<{if $xo_system_menu}><{$xo_system_menu}><{/if}>
+							<{$xoops_contents}>
+							</div>								
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /.row -->
+			<{/if}>
+			<{if $modules}>
+			<div class="row">
+				<div class="col-lg-8">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title"><i class="fa fa-home fa-fw"></i> <{$lang_cp}></h3>
+						</div>
+						<div class="panel-body">
+							<{includeq file="$theme_tpl/icons.html"}>							
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title"><i class="fa fa-plane fa-fw"></i> Tasks Panel User</h3>
+						</div>
+						<div class="panel-body">
+							<{includeq file="$theme_tpl/tabs.html"}>
+							<div class="text-right">
+								<a href="<{xoAppUrl modules/system/help.php?mid=1&page=users}>">View Help <i class="fa fa-arrow-circle-right"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>                    
+			</div>
+			<!-- /.row -->			
+			<div class="row">
+				<div class="col-lg-8">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title"><i class="fa fa-inbox fa-fw"></i> <{$smarty.const._OXYGEN_INSTALLEDMODULES}></h3>
+						</div>
+						<div class="panel-body">
+							<{includeq file="$theme_tpl/modules.html"}>
+							<div class="text-right">
+								<a href="<{xoAppUrl modules/system/help.php?mid=1&page=modulesadmin}>">View Help <i class="fa fa-arrow-circle-right"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title"><i class="fa fa-book fa-fw"></i> <{$smarty.const._MD_CPANEL_OVERVIEW}></h3>
+						</div>
+						<div class="panel-body">
+							<{includeq file="$theme_tpl/accordion.html"}>
+							<div class="text-right">
+								<a href="<{xoAppUrl modules/system/help.php?mid=1&page=preferences}>">View Help <i class="fa fa-arrow-circle-right"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>                    
+			</div>
+			<!-- /.row -->
+			<{/if}>
+		</div>
+		<!-- /.container-fluid -->
+    </div>
+    <!-- /#page-wrapper -->
