@@ -9,6 +9,8 @@ Use a new fresh version of xoops 2.5.7 or 2.5.8
 
 You could overwrite the files there to change
 
+Changed extension from .html to .tpl, in the file class/theme.php
+
 # Bootstrap
 
 This theme uses bootstrap 3.3.1 or 3.3.2, to work properly you must use jquery 1.10.4
