@@ -168,7 +168,7 @@ class xos_opal_Theme
      *
      * @var string
      */
-    var $canvasTemplate = 'theme.html';
+    var $canvasTemplate = 'theme.tpl';
 
      /**
      * Theme folder path
@@ -497,7 +497,7 @@ class xos_opal_Theme
 
         $this->template->assign_by_ref('xoops_contents', $this->content);
 
-        // Do not cache the main (theme.html) template output
+        // Do not cache the main (theme.tpl) template output
         $this->template->caching = 0;
         $this->template->display($this->path . '/' . $this->canvasTemplate);
         $this->renderCount++;

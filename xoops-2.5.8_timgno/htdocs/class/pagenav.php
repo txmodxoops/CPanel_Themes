@@ -197,7 +197,7 @@ class XoopsPageNav
         $xoopsTpl->assign('onchange', "location=this.options[this.options.selectedIndex].value;");
         $xoopsTpl->assign('pagination_select', true);
         $xoopsTpl->assign('showbutton', $showbutton);
-        $xoopsTpl->assign('align', ' pagination-' . $align);
+        $xoopsTpl->assign('align', ' pull-' . $align);
         $ret = $xoopsTpl->fetch('db:system_pagenav.html');
         $xoopsTpl->clear_assign('xo_select');
         return $ret;

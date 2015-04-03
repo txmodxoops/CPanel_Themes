@@ -51,6 +51,20 @@ ul {
 	height: 40px;
 }
 
+#toTop {
+	width:42px;
+	height:42px;
+	background:url(../img/back-top-btn.png) no-repeat;
+	text-align:center;
+	position:fixed;
+	bottom:10px;
+	right:20px;
+	cursor:pointer;
+	display:none;
+	text-indent:-9999px;
+	z-index:12; 
+}
+
 i {
 	font-size:18px;
 }

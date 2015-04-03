@@ -8,7 +8,7 @@
             <img class="img-rounded" src='<{$op.icon|default:"$theme_icons/icon_options.png"}>' alt="<{$op.title}>" />
         </a>
         <{/foreach}>
-        <{if $moddir!='system' && $mod_options}>
+        <{if $moddir !='system' && $mod_options}>
         <a href="<{$xoops_url}>/modules/system/admin.php?fct=preferences&amp;op=showmod&amp;mod=<{$modid}>" data-toggle="tooltip" data-original-title="<{$smarty.const._OXYGEN_SITEPREF}>" title="<{$smarty.const._OXYGEN_SITEPREF}>">
             <img class="img-rounded" src="<{$theme_icons}>/prefs.png" alt="<{$smarty.const._OXYGEN_SITEPREF}>" />
         </a>
