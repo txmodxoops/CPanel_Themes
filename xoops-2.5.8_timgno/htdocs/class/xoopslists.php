@@ -200,9 +200,9 @@ if (!defined('XOOPS_LISTS_INCLUDED')) {
         {
             $avatars = array();
             if ($avatar_dir != '') {
-                $avatars = XoopsLists::getImgListAsArray(XOOPS_ROOT_PATH . '/images/avatar/' . $avatar_dir . '/', $avatar_dir . '/');
+                $avatars = XoopsLists::getImgListAsArray(XOOPS_UPLOAD_PATH . '/avatars/' . $avatar_dir . '/', $avatar_dir . '/');
             } else {
-                $avatars = XoopsLists::getImgListAsArray(XOOPS_ROOT_PATH . '/images/avatar/');
+                $avatars = XoopsLists::getImgListAsArray(XOOPS_UPLOAD_PATH . '/avatars/');
             }
 
             return $avatars;
@@ -215,10 +215,10 @@ if (!defined('XOOPS_LISTS_INCLUDED')) {
         {
             $avatars = array();
             $dirlist = array();
-            $dirlist = XoopsLists::getDirListAsArray(XOOPS_ROOT_PATH . '/images/avatar/');
+            $dirlist = XoopsLists::getDirListAsArray(XOOPS_UPLOAD_PATH . '/avatars/');
             if (count($dirlist) > 0) {
                 foreach ($dirlist as $dir) {
-                    $avatars[$dir] = &XoopsLists::getImgListAsArray(XOOPS_ROOT_PATH . '/images/avatar/' . $dir . '/', $dir . '/');
+                    $avatars[$dir] = &XoopsLists::getImgListAsArray(XOOPS_UPLOAD_PATH . '/avatars/' . $dir . '/', $dir . '/');
                 }
             } else {
                 return false;

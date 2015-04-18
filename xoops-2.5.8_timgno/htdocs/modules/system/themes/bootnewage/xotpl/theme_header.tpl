@@ -12,6 +12,7 @@
 				</div>
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">        
+						<li class="home"><a href="<{xoAppUrl /}>"><i class="glyphicon glyphicon-home"></i></a></li>
 						<{foreach item=item from=$navitems}>
 						<li class="dropdown">								
 							<a href="<{$item.link}>" class="dropdown-toggle" title="<{$item.title}>" data-toggle="dropdown" data-hover="dropdown-menu"> <i class="glyphicon glyphicon-<{$item.icon}>"></i> <span class="caret"></span></a>
@@ -37,11 +38,11 @@
 							<a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown" title="<{$smarty.const._OXYGEN_THEME_COLOR}>">
 								<i class="glyphicon glyphicon-tint"></i> <span class="caret"></span>
 							</a>
-							<ul id="g-account-menu" class="dropdown-menu" role="menu">
+							<ul id="g-color-menu" class="dropdown-menu" role="menu">
 								<li class="bg-color bg-dark"><a id="dark" href="<{$theme_css}>/index.html?style=dark" rel="dark" class="styleswitch"><{$smarty.const._OXYGEN_DARK}></a></li>
 								<li class="bg-color bg-silver"><a id="silver" href="<{$theme_css}>/index.html?style=silver" rel="silver" class="styleswitch"><{$smarty.const._OXYGEN_SILVER}></a></li>
 								<li class="bg-color bg-orange"><a id="orange" href="<{$theme_css}>/index.html?style=orange" rel="orange" class="styleswitch"><{$smarty.const._OXYGEN_ORANGE}></a></li>
-								<li class="bg-color bg-red"><a id="red" href="<{$theme_css}>/index.html?style=red" rel="red" class="styleswitch"><{$smarty.const._OXYGEN_RED}></a></li>							
+								<li class="bg-color bg-red"><a id="red" href="<{$theme_css}>/index.html?style=red" rel="red" class="styleswitch"><{$smarty.const._OXYGEN_RED}></a></li>				
 								<li class="bg-color bg-green"><a id="green" href="<{$theme_css}>/index.html?style=green" rel="green" class="styleswitch"><{$smarty.const._OXYGEN_GREEN}></a></li>
 								<li class="bg-color bg-yellow"><a id="yellow" href="<{$theme_css}>/index.html?style=yellow" rel="yellow" class="styleswitch"><{$smarty.const._OXYGEN_YELLOW}></a></li>
 								<li class="bg-color bg-blue"><a id="blue" href="<{$theme_css}>/index.html?style=blue" rel="blue" class="styleswitch"><{$smarty.const._OXYGEN_BLUE}></a></li>

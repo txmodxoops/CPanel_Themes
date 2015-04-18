@@ -1,0 +1,85 @@
+/*
+ * Dashboard Responsive Admin Theme
+ *
+ * @copyright       Txmod Xoops <http://www.txmodxoops.org/> - Xoops Project <http://www.xoops.org/>
+ * @license         http://www.fsf.org/copyleft/gpl.html GNU public license 3.0
+ * @package         themes
+ * @since           2.5.x
+ * @author          Txmod Xoops <http://www.txmodxoops.org/>
+ * @maintained      Xoops Design Theme <http://www.xoops.org/>
+ *
+ * @version         $Id 1.0
+*/
+
+/* ==================== Form definitions ==================== */
+/* Hide the checkboxes and radio buttons */
+input[type=checkbox]:not(old),
+input[type=radio   ]:not(old){
+  width     : 2em;
+  margin    : 0;
+  padding   : 0;
+  font-size : 1em;
+  opacity   : 0;
+}
+/* Position the label */
+input[type=checkbox]:not(old) + label,
+input[type=radio   ]:not(old) + label{
+  display      : inline-block;
+  margin-left  : -2em;
+  line-height  : 1.5em;
+}
+/* Style the first span to create the unchecked graphics */
+input[type=checkbox]:not(old) + label > span,
+input[type=radio   ]:not(old) + label > span{
+  display          : inline-block;
+  width            : 0.995em;
+  height           : 0.995em;
+  margin           : 0.25em 0.25em 0.25em 0.25em;
+  border           : 0.0925em solid rgb(152,152,152);
+  border-radius    : 0.325em;
+  background       : rgb(224,224,224);
+  background-image :    -moz-linear-gradient(rgb(240,240,240),rgb(224,224,224));
+  background-image :     -ms-linear-gradient(rgb(240,240,240),rgb(224,224,224));
+  background-image :      -o-linear-gradient(rgb(240,240,240),rgb(224,224,224));
+  background-image : -webkit-linear-gradient(rgb(240,240,240),rgb(224,224,224));
+  background-image :         linear-gradient(rgb(240,240,240),rgb(224,224,224));
+  vertical-align   : bottom;
+}
+/* Background gradient is reversed on selected checkboxes and radio buttons */
+input[type=checkbox]:not(old):checked + label > span,
+input[type=radio   ]:not(old):checked + label > span{
+  background-image :    -moz-linear-gradient(rgb(224,224,224),rgb(240,240,240));
+  background-image :     -ms-linear-gradient(rgb(224,224,224),rgb(240,240,240));
+  background-image :      -o-linear-gradient(rgb(224,224,224),rgb(240,240,240));
+  background-image : -webkit-linear-gradient(rgb(224,224,224),rgb(240,240,240));
+  background-image :         linear-gradient(rgb(224,224,224),rgb(240,240,240));
+}
+/* Display a tick inside selected checkboxes */
+input[type=checkbox]:not(old):checked + label > span:before{
+  content     : '✓';
+  display     : block;
+  width       : 1em;
+  color       : rgb(104,104,104);
+  font-size   : 0.875em;
+  line-height : 1em;
+  text-align  : center;
+  text-shadow : 0 0 0.0714em rgb(115,153,77);
+  font-weight : bold;
+}
+/* Display a ‘bullet’ inside selected radio buttons, 
+   applying the same techniques as for the unchecked 
+   graphics to the second span element */
+input[type=radio]:not(old):checked + label > span > span{
+  display          : block;
+  width            : 0.7em;
+  height           : 0.7em;
+  margin           : 0.09em 0.05em 0.05em 0.08em;
+  border           : 0.0925em solid rgb(105,105,105);
+  border-radius    : 0.425em;
+  background       : rgb(120,120,120);
+  background-image :    -moz-linear-gradient(rgb(160,150,140),rgb(150,150,150));
+  background-image :     -ms-linear-gradient(rgb(160,150,140),rgb(150,150,150));
+  background-image :      -o-linear-gradient(rgb(160,150,140),rgb(150,150,150));
+  background-image : -webkit-linear-gradient(rgb(160,150,140),rgb(150,150,150));
+  background-image :         linear-gradient(rgb(160,150,140),rgb(150,150,150));
+}

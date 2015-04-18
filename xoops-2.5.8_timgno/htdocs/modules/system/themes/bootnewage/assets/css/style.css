@@ -14,7 +14,7 @@
 @import url(accordion.css);
 @import url(logger.css);
 @import url(tabs.css);
-
+@import url(form.css);
 /* ==================== General definitions ==================== */
 html {
     width: 100%;
@@ -69,11 +69,95 @@ i {
 	font-size:18px;
 }
   
-footer {
-	margin-top:20px;
-	padding-top:20px;
-	padding-bottom:20px;
-	background-color:#efefef;
+#g-color-menu {
+	margin: 0;
+	padding: 15px 0 0 15px;
+}
+#g-color-menu li {
+	display: inline-block;
+	border: 2px solid black;
+	height: 30px;
+	width: 30px;
+	margin: 0 15px 15px 0;
+}
+#g-color-menu li:hover {
+	border: 2px solid white;
+}
+#g-color-menu .color-theme1 {
+	display: block;
+	width: 0px;
+	height: 0px;
+	border-left-color: transparent !important;
+	border-top-color: transparent !important;
+	position: relative;
+	z-index: 1
+}
+#g-color-menu .color-theme2 {
+	display: block;
+	width: 26px;
+	height: 26px;
+	position: relative;
+	top: -26px;
+}
+#g-color-menu li.theme1 {
+	display: none
+}
+#g-color-menu li {
+	cursor: pointer
+}
+#g-color-menu .theme1 .color1 {
+	border: 13px solid #ffffff;
+}
+#g-color-menu .theme1 .color2 {
+	background: #484848;
+}
+#g-color-menu .theme2 .color1 {
+	border: 13px solid #f6f6f6;
+}
+#g-color-menu .theme2 .color2 {
+	background: #f2404e;
+}
+#g-color-menu .theme3 .color1 {
+	border: 13px solid #cbccbe;
+}
+#g-color-menu .theme3 .color2 {
+	background: #584336;
+}
+#g-color-menu .theme4 .color1 {
+	border: 13px solid #fdfdfd;
+}
+#g-color-menu .theme4 .color2 {
+	background: #eac12d;
+}
+#g-color-menu .theme5 .color1 {
+	border: 13px solid #f5f1e8;
+}
+#g-color-menu .theme5 .color2 {
+	background: #b04444;
+}
+#g-color-menu .theme6 .color1 {
+	border: 13px solid #ffffff;
+}
+#g-color-menu .theme6 .color2 {
+	background: #729f42;
+}
+#g-color-menu .theme7 .color1 {
+	border: 13px solid #f1f1f1;
+}
+#g-color-menu .theme7 .color2 {
+	background: #317081;
+}
+#g-color-menu .theme8 .color1 {
+	border: 13px solid #fcfcfc;
+}
+#g-color-menu .theme8 .color2 {
+	background: #43bebc;
+}
+#g-color-menu .theme9 .color1 {
+	border: 13px solid #f9f6ed;
+}
+#g-color-menu .theme9 .color2 {
+	background: #eea200;
 }
 
 .nav>li .count {
@@ -95,7 +179,7 @@ footer {
 
 /* Dropdown Submenu Top */
 
-.dropdown-submenu{	
+.dropdown-submenu {	
 	position:relative;	
 }
 
@@ -186,6 +270,13 @@ li.bg-color.bg-blue a {
 
 .row.row-preferences {
 	margin: 20px 0 0 10px;
+}
+
+footer {
+	margin-top:20px;
+	padding-top:20px;
+	padding-bottom:20px;
+	background-color:#efefef;
 }
 
 @media(max-width:767px) {    	
